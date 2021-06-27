@@ -5,7 +5,6 @@ struct MyCoffeeTabView: View {
     @State var userDrinks = FetchDrinks()
 
     //top 5 ranking drinks 5 being the most and 1 being the least.
-    @State var friendUser: [friendUserDrinkInfo] = []
     //for friend drinks we need the username/drink type/unique ID(passes)
     
 //    func addFriendsArray(){
@@ -19,7 +18,7 @@ struct MyCoffeeTabView: View {
             NavigationView {
                 ZStack{
                     VStack {
-                        RecentDrinksViewSection()
+                        FriendRecentDrinkHScroll()
                         Spacer()
                         VStack (alignment:.center){
                             CreateNewDrinkBtnSection()

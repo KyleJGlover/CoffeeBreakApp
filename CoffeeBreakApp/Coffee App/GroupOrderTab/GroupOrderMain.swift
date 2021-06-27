@@ -75,6 +75,7 @@ struct GroupOrderMain: View {
                                     
                             
                         }.navigationBarTitle(Text("MyGroupOrder"), displayMode: .automatic)
+                            .accentColor(.blue)
                     }
 
             }

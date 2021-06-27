@@ -1,67 +1,202 @@
 import Foundation
+import SwiftUI
 
- class userDrinkInfo{
-     var drinkName: String
-     var temp: String
-     var bean: String
-     var roast: String
-     var sugar: String
-     var milkType: String
-     var milkFat: String
-     var flavor: String
+//Current User's object
+class userDrinkInfo: ObservableObject, Equatable{
+    static func == (lhs: userDrinkInfo, rhs: userDrinkInfo) -> Bool {
+        return lhs.drinkName == rhs.drinkName
+    }
+    @Published var userName: String
+    @Published var drinkName: String
+    @Published var temp: String
+    @Published var bean: String
+    @Published var roast: String
+    @Published var sugar: String
+    @Published var milkType: String
+    @Published var milkFat: String
+    @Published var flavor: String
+    //The Extra text files
+    @Published var creamerLevel: String
+    @Published var sugarBags: String
+    @Published var texture: String
+    @Published var level: String
+    @Published var extraComments: String
      
      init() {
-         self.drinkName = "Drink Name"
-         self.temp = "temperature"
-         self.bean = "Bean Type"
-         self.roast = "Roast Level"
-         self.sugar = "Sugar Level"
-         self.milkType = "Milk Type"
-         self.milkFat = "Mlk Fat"
-         self.flavor = "flavor"
+        
+        self.userName = "Username"
+        self.drinkName = "Drink Name"
+        self.temp = "temperature"
+        self.bean = "Bean Type"
+        self.roast = "Roast Level"
+        self.sugar = "Sugar Level"
+        self.milkType = "Milk Type"
+        self.milkFat = "Milk Fat"
+        self.flavor = "flavor"
+        //The Extra text files
+        self.creamerLevel = "Creamer Levels"
+        self.sugarBags = "Bags of Sugar"
+        self.texture = "Milk Texture"
+        self.level = "Milk Level"
+        self.extraComments = "Extra Comments"
+        
      }
-     init(drinkName: String, beanType:String, roastLevel:String, sugarLevel:String, milkType:String, milkFat:String, flavor:String, temp:String  ) {
-         self.drinkName = drinkName
-         self.temp = temp
-         self.bean = beanType
-         self.roast = roastLevel
-         self.sugar = sugarLevel
-         self.milkType = milkType
-         self.milkFat = milkFat
-         self.flavor = flavor
+     init(userName: String, drinkName: String, bean:String, roast:String, sugar:String, milkType:String, milkFat:String, flavor:String, temp:String, creamerLevel: String, sugarBags: String, texture: String, level: String, extraComments: String) {
+        
+        self.userName = userName
+        self.drinkName = drinkName
+        self.temp = temp
+        self.bean = bean
+        self.roast = roast
+        self.sugar = sugar
+        self.milkType = milkType
+        self.milkFat = milkFat
+        self.flavor = flavor
+        //The Extra text files
+        self.creamerLevel = creamerLevel
+        self.sugarBags = sugarBags
+        self.texture = texture
+        self.level = level
+        self.extraComments = extraComments
      }
  }
- class friendUserDrinkInfo{
-     var drinkName: String
-     var temp: String
-     var beanType: String
-     var roastLevel: String
-     var sugarLevel: String
-     var milkType: String
-     var milkFat: String
-     var flavor: String
+
+class listDrinks: ObservableObject {
+    @Published var drinkList = [userDrinkInfo]()
+    
+    func addDrink(drink:userDrinkInfo){
+        drinkList.append(drink)
+    }
+    func removeDrink(drink:userDrinkInfo){
+        if let index = drinkList.firstIndex(of: drink){
+            drinkList.remove(at: index)
+        }
+    }
+}
+
+//Group Order object
+class groupOrder: ObservableObject, Equatable{
+    static func == (lhs: groupOrder, rhs: groupOrder) -> Bool {
+        return lhs.groupName == rhs.groupName
+    }
+    @Published var isActive: Bool
+    @Published var groupName: String
+    @Published var owner: String
+    @Published var location: String
+    @Published var time: String
+    @Published var members: [String]
+     
      init() {
-         self.drinkName = "Drink Name"
-         self.temp = "Temperature"
-         self.beanType = "Bean Type"
-         self.roastLevel = "Roast Level"
-         self.sugarLevel = "Sugar Level"
-         self.milkType = "Milk Type"
-         self.milkFat = "Mlk Fat"
-         self.flavor = "flavor"
+        self.isActive = false
+        self.groupName = "Group Name"
+        self.owner = "Owner"
+        self.location = "Location"
+        self.time = "time"
+        self.members = ["member1", "member2", "member3"]
      }
-     init(drinkName: String, temp:String, beanType: String, roastLevel: String, sugarLevel: String, milkType:String, milkFat:String, flavor:String) {
-         self.drinkName = drinkName
-         self.temp = temp
-         self.beanType = beanType
-         self.roastLevel = roastLevel
-         self.sugarLevel = sugarLevel
-         self.milkType = milkType
-         self.milkFat = milkFat
-         self.flavor = flavor
- 
+    init(isActive: Bool, groupName: String, owner: String, location:String, time:String, members:[String]) {
+        self.isActive = isActive
+        self.groupName = groupName
+        self.owner = owner
+        self.location = location
+        self.time = time
+        self.members = members
+     }
+    
+    func activateOrder(){
+        isActive = true
+    }
+    
+ }
+
+class listOrder: ObservableObject {
+    @Published var orderList = [groupOrder]()
+    
+    func addOrder(order:groupOrder){
+        orderList.append(order)
+    }
+    func removeDrink(drink:groupOrder){
+        if let index = orderList.firstIndex(of: drink){
+            orderList.remove(at: index)
+        }
+    }
+}
+
+//Current Friend User's object
+
+class friendDrinkInfo: ObservableObject, Equatable{
+    static func == (lhs: friendDrinkInfo, rhs: friendDrinkInfo) -> Bool {
+        return lhs.drinkName == rhs.drinkName
+            //&& lhs.userName == rhs.userName
+
+    }
+    @Published var userName: String
+    @Published var drinkName: String
+    @Published var temp: String
+    @Published var bean: String
+    @Published var roast: String
+    @Published var sugar: String
+    @Published var milkType: String
+    @Published var milkFat: String
+    @Published var flavor: String
+    //The Extra text files
+    @Published var creamerLevel: String
+    @Published var sugarBags: String
+    @Published var texture: String
+    @Published var level: String
+    @Published var extraComments: String
+     
+     init() {
+        
+        self.userName = "Username"
+        self.drinkName = "Drink Name"
+        self.temp = "temperature"
+        self.bean = "Bean Type"
+        self.roast = "Roast Level"
+        self.sugar = "Sugar Level"
+        self.milkType = "Milk Type"
+        self.milkFat = "Milk Fat"
+        self.flavor = "flavor"
+        //The Extra text files
+        self.creamerLevel = "Creamer Levels"
+        self.sugarBags = "Bags of Sugar"
+        self.texture = "Milk Texture"
+        self.level = "Milk Level"
+        self.extraComments = "Extra Comments"
+        
+     }
+     init(userName: String, drinkName: String, bean:String, roast:String, sugar:String, milkType:String, milkFat:String, flavor:String, temp:String, creamerLevel: String, sugarBags: String, texture: String, level: String, extraComments: String) {
+        
+        self.userName = userName
+        self.drinkName = drinkName
+        self.temp = temp
+        self.bean = bean
+        self.roast = roast
+        self.sugar = sugar
+        self.milkType = milkType
+        self.milkFat = milkFat
+        self.flavor = flavor
+        //The Extra text files
+        self.creamerLevel = creamerLevel
+        self.sugarBags = sugarBags
+        self.texture = texture
+        self.level = level
+        self.extraComments = extraComments
      }
  }
+
+class listFriendDrinks: ObservableObject {
+    @Published var drinkFriendList = [friendDrinkInfo]()
+    
+    func addDrink(drink:friendDrinkInfo){
+        drinkFriendList.append(drink)
+    }
+    func removeDrink(drink:friendDrinkInfo){
+        if let index = drinkFriendList.firstIndex(of: drink){
+            drinkFriendList.remove(at: index)
+        }
+    }
+}
 
 
 class FriendInfo: Identifiable {

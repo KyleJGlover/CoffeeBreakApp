@@ -55,15 +55,14 @@ struct MapUserView: View {
                 self.getNearByLandmarks()
             }.textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
-            .offset(y: 44)
-            
+            .offset(y: -40)
             
             PlaceListView(landmarks: self.landmarks) {
                 // do something
                 self.tapped.toggle()
             }.animation(.spring())
             .offset(y: calculateOffset())
-        }
+        }.navigationBarTitle("")
     }
 }
 

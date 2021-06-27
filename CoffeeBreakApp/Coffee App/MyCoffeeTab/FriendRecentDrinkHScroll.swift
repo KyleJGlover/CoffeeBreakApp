@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RecentDrinksViewSection: View{
+struct FriendRecentDrinkHScroll: View{
     
     var body: some View{
         ScrollView (.horizontal){
@@ -8,7 +8,7 @@ struct RecentDrinksViewSection: View{
                 HStack (spacing: 0) {
                     ForEach(0 ..< 15) { number in
                         NavigationLink(
-                            destination: DetailView()
+                            destination: DetailsView()
                                 ,
                             label: {
                                 FriendView()
@@ -23,18 +23,8 @@ struct RecentDrinksViewSection: View{
         .background(Color("myCoffeeLightBrown"))
     }
 }
-struct DetailView: View{
-    
-    
-    var body:some View{
-        GeometryReader{ geometry in
-            VStack{
-                Text("Drink ")
-                Text("More Information")
-            }.frame(width: geometry.size.width, height: geometry.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        }
-    }
-}
+
+
 struct FriendView: View{
     var body: some View{
         VStack (alignment: .center){
@@ -67,7 +57,7 @@ struct FriendView: View{
 struct RecentDrinksViewSection_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RecentDrinksViewSection()
+            FriendRecentDrinkHScroll()
         }
     }
 }

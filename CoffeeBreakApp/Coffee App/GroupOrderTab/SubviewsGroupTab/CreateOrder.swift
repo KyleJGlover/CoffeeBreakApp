@@ -12,7 +12,7 @@ struct CreateOrder: View {
     @ObservedObject var newOrder = Order()
     
     @State var name = ""
-    @State var location = ""
+    @State var location = "Location"
     @State var date = Date()
     var calendar = Calendar.current
     var closedRange: ClosedRange<Date> {
@@ -37,10 +37,8 @@ struct CreateOrder: View {
             Form{
                 TextField("Group Name", text:$name)
                 NavigationLink(destination: MapUserView()){
-                    TextField("Location", text:$location)
+                    Text(location)
                 }
-
-
                 DatePicker("Date/Time", selection:$date, in:closedRange)
                     .datePickerStyle(WheelDatePickerStyle())
                     .clipped()
@@ -49,20 +47,13 @@ struct CreateOrder: View {
                 Section {
                     Button(action: {
                         createOrder(name: name, location: location, date: date)
-                        
                     }) {
                         Text("Create Order")
-                            
                             .accentColor(.blue)
                     }
                 }
-                
-                
-                
-
-                
             }
-        }
+        }.navigationBarHidden(true)
     }
     func createOrder(name:String, location:String , date: Date) {
 //        let calendar = Calendar.current

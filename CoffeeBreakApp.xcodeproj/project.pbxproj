@@ -35,10 +35,12 @@
 		5C163B502686C51B008C6D14 /* listOfCoffeeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B392686C51B008C6D14 /* listOfCoffeeSection.swift */; };
 		5C163B512686C51B008C6D14 /* CreateNewDrinkBtnSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B3A2686C51B008C6D14 /* CreateNewDrinkBtnSection.swift */; };
 		5C163B522686C51B008C6D14 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B3B2686C51B008C6D14 /* MainView.swift */; };
-		5C163B532686C51B008C6D14 /* RecentDrinksViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B3C2686C51B008C6D14 /* RecentDrinksViewSection.swift */; };
+		5C163B532686C51B008C6D14 /* FriendRecentDrinkHScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B3C2686C51B008C6D14 /* FriendRecentDrinkHScroll.swift */; };
 		5C163B552686C61A008C6D14 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B542686C61A008C6D14 /* DataModel.swift */; };
-		5C163B592686C69C008C6D14 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B572686C69C008C6D14 /* UserData.swift */; };
 		5C163B5A2686C69C008C6D14 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B582686C69C008C6D14 /* Models.swift */; };
+		5C163B5E268819CB008C6D14 /* SecureLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B5D268819CB008C6D14 /* SecureLevelView.swift */; };
+		5C163B61268832D2008C6D14 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B60268832D2008C6D14 /* DetailsView.swift */; };
+		5C163B63268835F2008C6D14 /* ExtraDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B62268835F2008C6D14 /* ExtraDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,10 +74,12 @@
 		5C163B392686C51B008C6D14 /* listOfCoffeeSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listOfCoffeeSection.swift; sourceTree = "<group>"; };
 		5C163B3A2686C51B008C6D14 /* CreateNewDrinkBtnSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewDrinkBtnSection.swift; sourceTree = "<group>"; };
 		5C163B3B2686C51B008C6D14 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		5C163B3C2686C51B008C6D14 /* RecentDrinksViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentDrinksViewSection.swift; sourceTree = "<group>"; };
+		5C163B3C2686C51B008C6D14 /* FriendRecentDrinkHScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRecentDrinkHScroll.swift; sourceTree = "<group>"; };
 		5C163B542686C61A008C6D14 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		5C163B572686C69C008C6D14 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		5C163B582686C69C008C6D14 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5C163B5D268819CB008C6D14 /* SecureLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureLevelView.swift; sourceTree = "<group>"; };
+		5C163B60268832D2008C6D14 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		5C163B62268835F2008C6D14 /* ExtraDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 				5C163AB62686C190008C6D14 /* LoginViewModel.swift */,
 				5C163AB72686C190008C6D14 /* LoginView.swift */,
 				5C163AB92686C190008C6D14 /* SignUpView.swift */,
+				5C163B5D268819CB008C6D14 /* SecureLevelView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -168,11 +173,11 @@
 		5C163B1A2686C51B008C6D14 /* Coffee App */ = {
 			isa = PBXGroup;
 			children = (
+				5C163B362686C51B008C6D14 /* MyCoffeeTab */,
 				5C163B562686C69C008C6D14 /* DataModels */,
 				5C163B212686C51B008C6D14 /* ProfileTab */,
 				5C163B232686C51B008C6D14 /* FriendTab */,
 				5C163B262686C51B008C6D14 /* GroupOrderTab */,
-				5C163B362686C51B008C6D14 /* MyCoffeeTab */,
 			);
 			path = "Coffee App";
 			sourceTree = "<group>";
@@ -218,11 +223,11 @@
 		5C163B2B2686C51B008C6D14 /* MapViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				5C163B332686C51B008C6D14 /* MapUserView.swift */,
+				5C163B312686C51B008C6D14 /* LocationManager */,
 				5C163B2C2686C51B008C6D14 /* Landmark */,
 				5C163B2F2686C51B008C6D14 /* PlaceListView.swift */,
 				5C163B302686C51B008C6D14 /* MapView.swift */,
-				5C163B312686C51B008C6D14 /* LocationManager */,
-				5C163B332686C51B008C6D14 /* MapUserView.swift */,
 			);
 			path = MapViewComponents;
 			sourceTree = "<group>";
@@ -250,7 +255,8 @@
 				5C163B3B2686C51B008C6D14 /* MainView.swift */,
 				5C163B372686C51B008C6D14 /* SubviewCoffeeTab */,
 				5C163B382686C51B008C6D14 /* MyCoffeeTabView.swift */,
-				5C163B3C2686C51B008C6D14 /* RecentDrinksViewSection.swift */,
+				5C163B3C2686C51B008C6D14 /* FriendRecentDrinkHScroll.swift */,
+				5C163B5F268832C0008C6D14 /* RecentDrinkSubViews */,
 				5C163B3A2686C51B008C6D14 /* CreateNewDrinkBtnSection.swift */,
 				5C163B392686C51B008C6D14 /* listOfCoffeeSection.swift */,
 			);
@@ -267,10 +273,18 @@
 		5C163B562686C69C008C6D14 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				5C163B572686C69C008C6D14 /* UserData.swift */,
 				5C163B582686C69C008C6D14 /* Models.swift */,
 			);
 			path = DataModels;
+			sourceTree = "<group>";
+		};
+		5C163B5F268832C0008C6D14 /* RecentDrinkSubViews */ = {
+			isa = PBXGroup;
+			children = (
+				5C163B60268832D2008C6D14 /* DetailsView.swift */,
+				5C163B62268835F2008C6D14 /* ExtraDetailView.swift */,
+			);
+			path = RecentDrinkSubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,14 +372,16 @@
 				5C163B4C2686C51B008C6D14 /* MapUserView.swift in Sources */,
 				5C163B472686C51B008C6D14 /* LandmarkAnnotation.swift in Sources */,
 				5C163ABF2686C190008C6D14 /* Credentials.swift in Sources */,
+				5C163B5E268819CB008C6D14 /* SecureLevelView.swift in Sources */,
 				5C163B482686C51B008C6D14 /* Landmark.swift in Sources */,
-				5C163B532686C51B008C6D14 /* RecentDrinksViewSection.swift in Sources */,
+				5C163B61268832D2008C6D14 /* DetailsView.swift in Sources */,
+				5C163B532686C51B008C6D14 /* FriendRecentDrinkHScroll.swift in Sources */,
 				5C163B4D2686C51B008C6D14 /* InactiveOrder.swift in Sources */,
+				5C163B63268835F2008C6D14 /* ExtraDetailView.swift in Sources */,
 				5C163AC42686C190008C6D14 /* APIService.swift in Sources */,
 				5C163B492686C51B008C6D14 /* PlaceListView.swift in Sources */,
 				5C163B432686C51B008C6D14 /* FriendsTabView.swift in Sources */,
 				5C163B552686C61A008C6D14 /* DataModel.swift in Sources */,
-				5C163B592686C69C008C6D14 /* UserData.swift in Sources */,
 				5C163B512686C51B008C6D14 /* CreateNewDrinkBtnSection.swift in Sources */,
 				5C163B452686C51B008C6D14 /* CreateOrder.swift in Sources */,
 				5C163B4B2686C51B008C6D14 /* LocationManager.swift in Sources */,

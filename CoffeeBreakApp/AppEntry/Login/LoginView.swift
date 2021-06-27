@@ -11,6 +11,9 @@ struct LoginView: View {
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
     
+    @State private var showingErrorAlert = false
+
+    
     @State var navBarHidden: Bool = true
 
     var body: some View {
@@ -69,13 +72,25 @@ struct LoginView: View {
                         Button("Login") {
                             loginVM.login { success in
                                 authentication.updateValidation(success: success)
+                                if !authentication.isValidated{
+                                    showingErrorAlert = true
+                                    loginVM.credentials.email = ""
+                                    loginVM.credentials.password = ""
+                                    
+                                }
                             }
                         }.frame(width: UIScreen.main.bounds.size.width - 100)
                     .padding()
                     .background(Color.green)
                     .cornerRadius(10)
                     .disabled(loginVM.loginDisabled)
-                        
+                    .alert(isPresented: $showingErrorAlert, content: {
+                        Alert(
+                            title: Text("Warning"),
+                            message: Text("Username and password combination incorrect!"),
+                            dismissButton: .default(Text("Got it!"))
+                        )
+                    })
                     }
                     HStack {
                         Spacer()

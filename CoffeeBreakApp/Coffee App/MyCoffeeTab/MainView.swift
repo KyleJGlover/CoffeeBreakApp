@@ -21,9 +21,8 @@ struct MainView: View {
             MyCoffeeTabView()
                 .tabItem {
                     VStack{
-                        Image(systemName: "leaf")
+                        Image(systemName: "homepod")
                         .accessibilityLabel("My Coffee")
-                            
                         }
                         }
                     .tag(1)

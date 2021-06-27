@@ -1,10 +1,3 @@
-//
-//  SignUpView.swift
-//  LoginPrototype
-//
-//  Created by Kyle Glover on 6/25/21.
-//
-
 import SwiftUI
 import Combine
 
@@ -21,19 +14,16 @@ struct SignUpView: View {
     @ObservedObject var passwordChecker:PasswordChecker = PasswordChecker()
     @State var selectedDate = Date()
     
+    @State private var showingSuccessAlert = false
+
+    @State private var showingErrorAlert = false
+    
+    
     @State var navBarHidden: Bool = true
 
     
     var body: some View {
         VStack{
-            //title for sign up page
-            HStack{
-                Text("Sign Up")
-                    .bold()
-                    .font(.title)
-                    .padding()
-                Spacer()
-            }
             Form {
             Section(header: Text("Personal Details")) {
                 
@@ -49,14 +39,6 @@ struct SignUpView: View {
                     .accessibilityLabel("Display Name")
                     .ignoresSafeArea(.keyboard, edges: .bottom)
                 
-//                Section(header: Text("Date of Birth")) {
-//                    VStack {
-//                            DatePicker("Enter your birthdate", selection: $selectedDate, displayedComponents: .date)
-//                                .labelsHidden()
-//                                .datePickerStyle(WheelDatePickerStyle())
-//                                .accessibilityLabel("Birth Date")
-//                    }
-//                } // end section date of birth
             } // end section Personal Information
                 Section(header: Text("Login Information")) {
                     TextField("Email (Will be your login id)", text: $email)
@@ -109,17 +91,50 @@ struct SignUpView: View {
                         .accessibilityLabel("Accept the terms and conditions")
 
                             if self.terms{
+                                
                                 Button("Sign Up!"){
-                                    
+                                        if password1 == password2 {
+                                            clearSignUp(firstName: firstName, lastName: lastName, userName: userName, email: email, password1: password1, password2: password2, showPasswords: showPasswords, terms: terms)
+                                            self.showingSuccessAlert = true
+                                        }
+                                        else{
+                                            
+                                            password1 = ""
+                                            password2 = ""
+                                            
+                                            showingErrorAlert = true
+                                        }
                                }// end button
+                                .alert(isPresented: $showingErrorAlert, content: {
+                                    Alert(
+                                        title: Text("Warning"),
+                                        message: Text("Passwords don't match. Please try again!"),
+                                        dismissButton: .default(Text("Got it!"))
+                                    )
+                                })
                             }
+                    
+                    
+                }
+                if showingSuccessAlert{
+                    Text("Success in creating new Profile!")
+                        .font(.title)
                 }
             } // end Form
-        }.navigationBarTitle("")
-        .navigationBarHidden(self.navBarHidden)
-        .onAppear(perform: {
-            self.navBarHidden = true
-        })
+        }.navigationBarTitle("Sign Up")
+    }
+    
+    func clearSignUp(firstName:String, lastName:String, userName:String, email:String, password1:String, password2:String, showPasswords:Bool, terms:Bool){
+        
+        self.firstName = ""
+        self.lastName = ""
+        self.userName = ""
+        self.email = ""
+        self.password1 = ""
+        self.password2 = ""
+        self.showPasswords = false
+        self.terms = false
+                
     }
 }
 
@@ -132,72 +147,6 @@ struct SignUpView_Previews: PreviewProvider {
 
 
 
-class PasswordChecker: ObservableObject {
-    public let didChange = PassthroughSubject<PasswordChecker, Never>()
-@Published var password: String = ""
-    
-    
-    // {
-//         didSet {
-//             self.checkForPassword(password: self.password)
-//         }
-//     }
-
-   var level: PasswordStrengthLevel = .none {
-        didSet {
-            self.didChange.send(self)
-        }
-    }
-
-    func checkForPassword(password: String) {
-        if password.count == 0 {
-            self.level = .none
-        } else if password.count < 2 {
-            self.level = .weak
-        } else if password.count < 6 {
-            self.level = .decent
-        } else {
-            self.level = .strong
-        }
-    }
-} // end class
 
 
-enum PasswordStrengthLevel: Int {
-    case none = 0
-    case weak = 1
-    case decent = 2
-    case strong = 3
-}
 
-struct SecureLevelView : View {
-    var level: PasswordStrengthLevel
-
-    var body: some View {
-        HStack {
-            RoundedRectangle(cornerRadius: 8).foregroundColor(self.getColors()[0]).frame(height: 10)
-            RoundedRectangle(cornerRadius: 8).foregroundColor(self.getColors()[1]).frame(height: 10)
-            RoundedRectangle(cornerRadius: 8).foregroundColor(self.getColors()[2]).frame(height: 10)
-        } // end HStack
-    } // end body
-
-    func getColors() -> [Color] {
-        switch self.level {
-        case .none:
-            return [.clear, .clear, .clear]
-        case .weak:
-            return [.red, .clear, .clear]
-        case .decent:
-            return [.red, .orange, .clear]
-        case .strong:
-            return [.red, .orange, .green]
-        } // end switch
-    } // end function getColors
-} // end struct
-
-
-struct SecureLevelView_Previews : PreviewProvider {
-    static var previews: some View {
-        SignUpView()
-    }
-}
