@@ -9,112 +9,134 @@ import SwiftUI
 
 struct ViewOrder: View {
     
+    @State private var isModal: Bool = false
+    
+    
     @StateObject var order = Order(id: 0, owner: "Kyle", name: "My Order",location: "Philz", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
     var body: some View {
-        GeometryReader{ geo in
-            List {
+        ZStack{
+            Color("myCoffeeControlColor")
+                .ignoresSafeArea()
+            VStack (alignment:.leading){
                 Group{
-                    
-                    HStack{
-                        Text("Name:")
-                            .font(.title)
-                            .underline()
-                        Text(self.order.name)
-                            .font(.title)
-                    }
-                    HStack{
-                        Text("Owner:")
-                            .underline()
-                            .font(.title)
-                        Text(self.order.owner)
-                            .font(.title)
-                    }
-                    HStack{
-                        Text("Location:")
-                            .underline()
-                            .font(.title)
-                        Text(self.order.name)
-                            .font(.title)
-                    }
-                    HStack{
-                        Text("Address:")
-                            .underline()
-                            .font(.title)
-                        Text("123 Bay ST")
-                            .font(.title)
-                    }
-                }
-                VStack{
-                    
-                    Spacer()
-                    
-                    HStack{
-                        Text("Members")
-                            .underline()
-                            .font(.title)
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        Spacer ()
-                        Text("Coffee Drinks")
-                            .underline()
-                            .font(.title)
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    }
-                    
-                    Spacer()
-                    
-                    VStack{
-                        ForEach(0 ..< self.order.members.count){num in
+                
+                    Group{
+                        
                             HStack{
-                                Spacer()
-                                
-                                Text(order.members[num])
-                                Spacer()
-                                Image (systemName:"arrow.right")
-                                Spacer()
-                                Text(order.memberDrinksName[num])
+                                Text("Name:")
+                                    .underline()
+                                Text(self.order.name)
                                 Spacer()
                             }
+                        HStack{
+                            Text("Owner:")
+                                .underline()
+                            Text(self.order.owner)
+                            Spacer()
                         }
+                        HStack{
+                            Text("Location:")
+                                .underline()
+                            Text(self.order.name)
+                            Spacer()
 
-                            
-                            
-//                            VStack{
-//                                Group {
-//                                    Text("Kyle")
-//                                    Text("Kyle")
-//                                    Text("Kyle")
-//                                }.padding(.leading, 30)
-//                                .padding()
-//                            }
-//                           Spacer()
-//                            VStack{
-//                                Group{
-//                                    Image(systemName:"arrow.right")
-//                                        .frame(width: geo.size.width * 0.1)
-//                                    Image(systemName:"arrow.right")
-//                                        .frame(width: geo.size.width * 0.1)
-//                                    Image(systemName:"arrow.right")
-//                                        .frame(width: geo.size.width * 0.1)
-//                                }.padding()
-//                            }
-//                            Spacer ()
-//                            VStack{
-//                                Group{
-//                                    Text("Drink")
-//                                    Text("Drink")
-//                                    Text("Drink")
-//                                }.padding(.trailing, 30)
-//                                .padding()
-//                            }
                         }
-                        .font(.system(size: 25))
+                        HStack{
+                            Text("Address:")
+                                .underline()
+                            Text("123 Bay ST")
+                            Spacer()
+                            
+                        }
+                    }.font(.title)
+                    .padding()
+                    
+                    HStack{
+                        Group{
+                        Text("Members")
+                            .underline()
+                            .padding()
+                        Spacer()
+                        Text("Drinks")
+                            .underline()
+                            .padding()
+                        }.font(.system(size: 25))
+                    }
+                    
+                    HStack{
+                        VStack(alignment:.leading){
+                            ForEach(0 ..< self.order.members.count){num in
+                                HStack{
+                                    Group{
+                                        VStack{
+                                            Text(order.members[num])
+                                        }
+                                        
+                                    Spacer()
+                                        if order.members[num] == order.owner{
+                                            VStack{
+                                                Button(action: {
+                                                    isModal = true
+                                                }) {
+                                                    Image(systemName:"plus")
+                                                }.sheet(isPresented: $isModal, content: {
+                                                    ExtraDetailView()
+                                                })
+                                                .padding()
+                                            }
+                                        } else{
+                                            VStack{
+                                                Image (systemName:"arrow.right")
+                                            }
+                                        }
+                                    Spacer()
+                                    Text(order.memberDrinksName[num])
+                                    }.padding(.top, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                        
+                                }
+                            }
+                        }
+                        .font(.system(size: 20))
+                        
+                    }.padding()
+                    
+                    
+    //                VStack{
+    //                    ForEach(0 ..< self.order.members.count){num in
+    //                        HStack{
+    //
+    //                            Text(order.members[num])
+    //
+    //                            Spacer()
+    //                            Image (systemName:"arrow.right")
+    //
+    //                            Spacer()
+    //                            Text(order.memberDrinksName[num])
+    //
+    //
+    //                            if order.members[num] == order.owner{
+    //                                NavigationLink(destination: AddDrinkOrder()){
+    //                                    Image(systemName:"plus")
+    //                                        .frame(width: 30)
+    //                                }.frame(width: 30)
+    //                                .foregroundColor(Color.black)
+    //
+    //
+    //                            }
+    //
+    //                        }
+    //                    }
+    //                }
+    //                .font(.system(size: 25))
 
+
+                
                 }
+                .background(Color.black)
+                .foregroundColor(Color.white)
+                .border(Color.white)
             }
-                
-                
-                
-            }
+        }
     }
 }
 

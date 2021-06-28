@@ -13,7 +13,6 @@ class userDrinkInfo: ObservableObject, Equatable{
     @Published var roast: String
     @Published var sugar: String
     @Published var milkType: String
-    @Published var milkFat: String
     @Published var flavor: String
     //The Extra text files
     @Published var creamerLevel: String
@@ -31,7 +30,6 @@ class userDrinkInfo: ObservableObject, Equatable{
         self.roast = "Roast Level"
         self.sugar = "Sugar Level"
         self.milkType = "Milk Type"
-        self.milkFat = "Milk Fat"
         self.flavor = "flavor"
         //The Extra text files
         self.creamerLevel = "Creamer Levels"
@@ -41,7 +39,7 @@ class userDrinkInfo: ObservableObject, Equatable{
         self.extraComments = "Extra Comments"
         
      }
-     init(userName: String, drinkName: String, bean:String, roast:String, sugar:String, milkType:String, milkFat:String, flavor:String, temp:String, creamerLevel: String, sugarBags: String, texture: String, level: String, extraComments: String) {
+     init(userName: String, drinkName: String, bean:String, roast:String, sugar:String, milkType:String, flavor:String, temp:String, creamerLevel: String, sugarBags: String, texture: String, level: String, extraComments: String) {
         
         self.userName = userName
         self.drinkName = drinkName
@@ -50,7 +48,6 @@ class userDrinkInfo: ObservableObject, Equatable{
         self.roast = roast
         self.sugar = sugar
         self.milkType = milkType
-        self.milkFat = milkFat
         self.flavor = flavor
         //The Extra text files
         self.creamerLevel = creamerLevel
@@ -62,15 +59,24 @@ class userDrinkInfo: ObservableObject, Equatable{
  }
 
 class listDrinks: ObservableObject {
-    @Published var drinkList = [userDrinkInfo]()
+    @Published var drinkList:[userDrinkInfo]
+    
+    init(){
+        self.drinkList = [
+            userDrinkInfo(userName: "KGLover", drinkName: "Coffee Tornado", bean:"Arcadia", roast:"Medium", sugar:"Splenda", milkType:"Whole milk", flavor:"Chocolate", temp:"Cold", creamerLevel: "5%", sugarBags: "2", texture: "smooth", level: "5%", extraComments: "This coffee is great for an quick wake up in the morning!"),
+            userDrinkInfo(userName: "Stephen", drinkName: "Coffee Hurricane", bean:"Robusta", roast:"Dark", sugar:"Equal", milkType:"2% milk", flavor:"Caramel", temp:"Cold", creamerLevel: "5%", sugarBags: "2", texture: "None", level: "5%", extraComments: "This coffee is great for an quick wake up in the afternoon!"),
+            userDrinkInfo(userName: "Barabara", drinkName: "Coffee Cyclone", bean:"Liberica", roast:"Light", sugar:"Truvia", milkType:"1% milk", flavor:"Vanilla", temp:"Hot", creamerLevel: "10%", sugarBags: "3", texture: "Steamed", level: "5%", extraComments: "This coffee is great for an quick wake up in the night!"),
+            userDrinkInfo(userName: "Blake", drinkName: "Coffee Caramel", bean:"Arcadia", roast:"Medium", sugar:"Splenda", milkType:"Whole milk", flavor:"Chocolate", temp:"Cold", creamerLevel: "5%", sugarBags: "2", texture: "smooth", level: "5%", extraComments: "This coffee is great for an quick wake up in the morning!"),
+            userDrinkInfo(userName: "Alyssa", drinkName: "Coffee Chocolate", bean:"Robusta", roast:"Dark", sugar:"Equal", milkType:"2% milk", flavor:"Caramel", temp:"Cold", creamerLevel: "5%", sugarBags: "2", texture: "None", level: "5%", extraComments: "This coffee is great for an quick wake up in the afternoon!"),
+            userDrinkInfo(userName: "Barabara", drinkName: "Best Coffee", bean:"Liberica", roast:"Light", sugar:"Truvia", milkType:"1% milk", flavor:"Vanilla", temp:"Hot", creamerLevel: "10%", sugarBags: "3", texture: "Steamed", level: "5%", extraComments: "This coffee is great for an quick wake up in the night!")]
+    }
+    
     
     func addDrink(drink:userDrinkInfo){
         drinkList.append(drink)
     }
-    func removeDrink(drink:userDrinkInfo){
-        if let index = drinkList.firstIndex(of: drink){
+    func removeDrink(drink:userDrinkInfo, index: Int){
             drinkList.remove(at: index)
-        }
     }
 }
 

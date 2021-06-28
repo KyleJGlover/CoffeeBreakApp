@@ -14,27 +14,29 @@ struct MyCoffeeTabView: View {
 //    }
     
     var body: some View {
-            
+        
+        let drinks = listDrinks()
+        
             NavigationView {
                 ZStack{
+                    Color("myCoffeeControlColor")
+                    .edgesIgnoringSafeArea(.all)
                     VStack {
-                        FriendRecentDrinkHScroll()
-                        Spacer()
-                        VStack (alignment:.center){
-                            CreateNewDrinkBtnSection()
-                        }.frame(height:50)
-                        Spacer()
+                        //FriendRecentDrinkHScroll()
+                        
+                        CreateNewDrinkBtnSection()
+                            .environmentObject(drinks)
+                            .padding()
+                            .padding(.top, 30)
+
+                        listOfCoffeeSection()
+                        
                         VStack{
-                            listOfCoffeeSection()
-                        }
-                        Spacer()
-                    }.frame(width: UIScreen.main.bounds.size.width, height:UIScreen.main.bounds.size.height)
-                }.background(Color("myCoffeeControlColor"))
-                .edgesIgnoringSafeArea(.all)
-            }.accentColor(.black)
-            .navigationBarTitle(Text("MyCoffee"), displayMode: .automatic)
-            
-        
+                            
+                        }.frame(height: 50)
+                    }
+                }.navigationBarTitle(Text("MyCoffee"))
+            }
     }
 }
 

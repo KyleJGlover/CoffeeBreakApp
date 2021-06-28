@@ -37,46 +37,62 @@ struct GroupOrderMain: View {
     
     var body: some View {
             NavigationView {
+                ZStack{
+                    Color("myCoffeeControlColor")
+                        .ignoresSafeArea()
                     ScrollView{
                             VStack {
                                 //Active Group Orders (if any)
-                                HStack {
-                                    Text("Active")
-                                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                                        .font(.title)
-                                        .padding()
-                                    Spacer()
-                                }
-                                VStack{
-                                    NavigationLink ( destination: ViewOrder()){
-                                        ActiveOrder()
-                                    }.accentColor(.black)
-                                }
-                                HStack {
-                                    Text("Inactive")
-                                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                                        .font(.title)
-                                        .padding()
-                                    Spacer()
-                                }
                                 Spacer()
-                                VStack{
-                                    NavigationLink ( destination: ViewOrder()){
-                                        InactiveOrder()
-                                    }.accentColor(.black)
-                                }
-                                Spacer()
+                                Group{
+                                    HStack {
+                                        
+                                        Text("Active")
+                                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                            .font(.title)
+                                            .padding()
+                                        Spacer()
+                                    }
+                                    .background(Color.black)
+                                    .cornerRadius(8)
+                                    .padding()
+                                    VStack{
+                                        NavigationLink ( destination: ViewOrder()){
+                                            ActiveOrder()
+                                        }
+                                    }
+                                    HStack {
+                                        Text("Inactive")
+                                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                            .font(.title)
+                                            .padding()
+                                        Spacer()
+                                    }
+                                    
+                                    VStack{
+                                        NavigationLink ( destination: ViewOrder()){
+                                            InactiveOrder()
+                                        }.accentColor(.black)
+                                    }
+                                }.frame(width:UIScreen.main.bounds.size.width - 20)
+                                .background(Color.black)
+                                .cornerRadius(8)
                                 VStack{
                                     NavigationLink ( destination: CreateOrder()){
                                         CreateOrderButton()
-                                    }.accentColor(.black)
+                                    }
                                 }
+                                
+                                
                                 
                                     
                             
-                        }.navigationBarTitle(Text("MyGroupOrder"), displayMode: .automatic)
-                            .accentColor(.blue)
+                        }.navigationBarColor(backgroundColor: .black, titleColor: .white)
+                            //Above colors the Navigation bar
+                        .navigationBarTitle(Text("MyGroupOrder"), displayMode: .automatic)
+                        
                     }
+                }.foregroundColor(Color.white)
 
             }
         }
@@ -86,11 +102,17 @@ struct GroupOrderMain: View {
 struct CreateOrderButton: View {
     var body: some View{
                 VStack{
-                            Text("Create a Group Order")
-                }.frame(width: 300, height: 30)
-                    .accentColor(.white)
+                    Text("Create a Group Order")
+                        .font(.title2)
+                        .bold()
+                }.frame(width: UIScreen.main.bounds.size.width - 50, height: 50)
+                    .foregroundColor(Color.white)
                     .background(Color.black)
                     .cornerRadius(25)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.white, lineWidth: 2)
+                        )
                     .padding()
     }
 }
@@ -102,19 +124,3 @@ struct GroupOrderMain_Previews: PreviewProvider {
 }
 
 
-//                VStack {
-//                    RecentDrinksViewSection()
-//                    Spacer()
-//                    VStack (alignment:.center){
-//                        Spacer()
-//                        CreateNewDrinkBtnSection()
-//                        Spacer()
-//                    }.frame(height:50)
-//                    Spacer()
-//                    VStack{
-//                        listOfCoffeeSection()
-//                    }
-//                    Spacer()
-//                }.frame(maxWidth: .infinity, maxHeight:.infinity)
-//                .background(Color("myCoffeeControlColor"))
-//                .edgesIgnoringSafeArea(.all)

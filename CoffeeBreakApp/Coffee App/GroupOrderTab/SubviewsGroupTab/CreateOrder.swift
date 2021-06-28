@@ -20,11 +20,6 @@ struct CreateOrder: View {
         let DaysSevenLater = Calendar.current.date(byAdding: .day, value: 7, to: Date())!
         return currentDate...DaysSevenLater
     }
-
-    
-    
-
-    
     var body: some View {
         VStack{
             HStack{
@@ -53,7 +48,8 @@ struct CreateOrder: View {
                     }
                 }
             }
-        }.navigationBarHidden(true)
+        }.navigationBarColor(backgroundColor: .white, titleColor: .black)
+        .navigationBarTitle("Create Your Order")
     }
     func createOrder(name:String, location:String , date: Date) {
 //        let calendar = Calendar.current

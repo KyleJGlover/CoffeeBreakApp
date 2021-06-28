@@ -1,22 +1,27 @@
 import SwiftUI
 
 struct CreateNewDrinkBtnSection: View{
+    
+    @EnvironmentObject var drinks:listDrinks
+    
     var body: some View{
         VStack (alignment:.center){
-            Spacer()
             HStack{
-                Spacer()
                 NavigationLink(
-                    destination: CreateNewDrinkView(),
+                    destination: CreateNewDrinkView().environmentObject(drinks),
                         label: {
-                            Spacer()
                             Text(" Create New Drink! ")
-                                .font(.system(size: 24, weight: .medium, design: .default))
-                                .frame(minWidth:0, maxWidth:.infinity)
-                                .foregroundColor(Color("myCoffeeWhiteSnow"))
+                                
+                                .font(.title)
+                                .frame(width: UIScreen.main.bounds.size.width - 50)
+                                .foregroundColor(Color.white)
                                 .background(Color.black)
-                                .border(Color.white)
-                            Spacer()
+                                .cornerRadius(10)
+                                .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.white, lineWidth: 2)
+                                    )
+        
                         })
             }
         }

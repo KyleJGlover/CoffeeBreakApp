@@ -19,7 +19,7 @@ struct SignUpView: View {
     @State private var showingErrorAlert = false
     
     
-    @State var navBarHidden: Bool = true
+    //@State var navBarHidden: Bool = true
 
     
     var body: some View {

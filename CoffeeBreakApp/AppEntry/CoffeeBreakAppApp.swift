@@ -10,10 +10,12 @@ import SwiftUI
 @main
 struct CoffeeBreakAppApp: App {
     @StateObject var authentication = Authentication()
+    @StateObject var userDrinks = userDrinkInfo()
     var body: some Scene {
         WindowGroup {
             if authentication.isValidated{
                 MainView()
+                    .environmentObject(userDrinks)
                     .environmentObject(authentication)
             } else {
                 LoginView()

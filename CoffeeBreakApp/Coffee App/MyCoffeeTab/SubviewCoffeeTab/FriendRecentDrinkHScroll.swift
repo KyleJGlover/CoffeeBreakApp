@@ -1,6 +1,11 @@
 import SwiftUI
 
+
+
 struct FriendRecentDrinkHScroll: View{
+    
+    let drinks = listDrinks()
+
     
     var body: some View{
         ScrollView (.horizontal){
@@ -9,6 +14,7 @@ struct FriendRecentDrinkHScroll: View{
                     ForEach(0 ..< 15) { number in
                         NavigationLink(
                             destination: DetailsView()
+                                .environmentObject(drinks)
                                 ,
                             label: {
                                 FriendView()
