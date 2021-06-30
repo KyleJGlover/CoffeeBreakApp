@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct InactiveOrder: View {
-    @StateObject var order = Order(id: 0, owner: "Kyle", name: "My Order",location: "Philz", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
+    @ObservedObject var order: Order
+
 
     var body: some View {
 
@@ -22,43 +23,39 @@ struct InactiveOrder: View {
 
                 }
                 Spacer()
+                VStack{
+                    Text("Time: \(self.order.time)")
+                        .padding(.trailing)
+                }
             }.frame(height:40)
             Group{
                 HStack{
                     VStack{
-                        Text("Owner:")
-                            
-                            
-                    }
-                    .padding(.leading)
-                    
+                        Text("Owner: \(self.order.owner)")
+                    }.padding(.leading)
+                    Spacer()
                     VStack{
-                        Text(self.order.owner)
+                        Text("Date: \(self.order.date)")
                     }
+                    .padding(.trailing)
+                }
+                
+                HStack{
+                    VStack{
+                        Text("Location: \(self.order.location)")
+                    }.padding(.leading)
                     Spacer()
                 }
                 
                 HStack{
                     VStack{
-                        Text("Location:")
-                    }
-                    .padding(.leading)
-                    
-                    VStack{
-                        Text(self.order.location)
-                    }
-                    Spacer()
-                }
-                
-                HStack{
-                    VStack{
-                        Text("Members:")
+                        Text("Members: ")
                     }
                     .padding(.leading)
                     
                     HStack{
                         ForEach(0 ..< self.order.members.count){num in
-                            Text(order.members[num])
+                            Text("\(self.order.members[num])")
                         }
                     }
                     Spacer()
@@ -68,13 +65,20 @@ struct InactiveOrder: View {
             .frame(height:30)
             .accentColor(.gray)
         }.border(Color.black)
+        .onAppear(perform: {
+            print("Active Order")
+            //order.addOrder()
+        })
         
     }
 }
 
 
 struct InactiveOrder_Previews: PreviewProvider {
+    @StateObject static var order: Order = Order(isActive: true, owner: "Kyle", name: "My Order",time:"4:00PM", date: "06/05/2021", location: "Philz", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
+
     static var previews: some View {
-        InactiveOrder()
+        
+        InactiveOrder(order: order)
     }
 }

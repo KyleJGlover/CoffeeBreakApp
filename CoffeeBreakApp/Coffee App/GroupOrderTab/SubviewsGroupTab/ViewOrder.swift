@@ -11,8 +11,8 @@ struct ViewOrder: View {
     
     @State private var isModal: Bool = false
     
-    
-    @StateObject var order = Order(id: 0, owner: "Kyle", name: "My Order",location: "Philz", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
+    @ObservedObject var order: Order
+
     var body: some View {
         ZStack{
             Color("myCoffeeControlColor")
@@ -22,12 +22,12 @@ struct ViewOrder: View {
                 
                     Group{
                         
-                            HStack{
-                                Text("Name:")
-                                    .underline()
-                                Text(self.order.name)
-                                Spacer()
-                            }
+                        HStack{
+                            Text("Name:")
+                                .underline()
+                            Text(self.order.name)
+                            Spacer()
+                        }
                         HStack{
                             Text("Owner:")
                                 .underline()
@@ -37,7 +37,7 @@ struct ViewOrder: View {
                         HStack{
                             Text("Location:")
                                 .underline()
-                            Text(self.order.name)
+                            Text(self.order.location)
                             Spacer()
 
                         }
@@ -69,11 +69,11 @@ struct ViewOrder: View {
                                 HStack{
                                     Group{
                                         VStack{
-                                            Text(order.members[num])
+                                            Text(self.order.members[num])
                                         }
                                         
                                     Spacer()
-                                        if order.members[num] == order.owner{
+                                        if self.order.members[num] == self.order.owner{
                                             VStack{
                                                 Button(action: {
                                                     isModal = true
@@ -90,7 +90,7 @@ struct ViewOrder: View {
                                             }
                                         }
                                     Spacer()
-                                    Text(order.memberDrinksName[num])
+                                        Text(self.order.memberDrinksName[num])
                                     }.padding(.top, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                                         
                                 }
@@ -135,13 +135,19 @@ struct ViewOrder: View {
                 .background(Color.black)
                 .foregroundColor(Color.white)
                 .border(Color.white)
-            }
+            }.onAppear(perform: {
+                print("Active Order")
+                //order.addOrder()
+            })
         }
     }
 }
 
 struct ViewOrder_Previews: PreviewProvider {
+    @StateObject static var order: Order = Order( isActive: true, owner: "Kyle", name: "My Order",time:"4:00PM", date: "06/05/2021", location: "Philz", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
+
     static var previews: some View {
-        ViewOrder()
+        
+        ViewOrder(order: order)
     }
 }

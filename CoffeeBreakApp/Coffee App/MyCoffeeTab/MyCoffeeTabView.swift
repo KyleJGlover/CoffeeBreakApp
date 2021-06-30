@@ -2,22 +2,10 @@ import SwiftUI
 
 struct MyCoffeeTabView: View {
     
-    @State var userDrinks = FetchDrinks()
-
-    //top 5 ranking drinks 5 being the most and 1 being the least.
-    //for friend drinks we need the username/drink type/unique ID(passes)
-    
-//    func addFriendsArray(){
-//        ForEach(0 ..< 15) {num in
-//            userDrinks.append(userDrinkInfo())
-//        }
-//    }
+    let drinks = listDrinks()
     
     var body: some View {
-        
-        let drinks = listDrinks()
-        
-            NavigationView {
+       NavigationView {
                 ZStack{
                     Color("myCoffeeControlColor")
                     .edgesIgnoringSafeArea(.all)
@@ -29,7 +17,7 @@ struct MyCoffeeTabView: View {
                             .padding()
                             .padding(.top, 30)
 
-                        listOfCoffeeSection()
+                        listOfCoffeeSection().environmentObject(drinks)
                         
                         VStack{
                             
@@ -42,8 +30,10 @@ struct MyCoffeeTabView: View {
 
 
 struct MyCoffeeTabView_Previews: PreviewProvider {
+    @State static var drinks = listDrinks()
+
     static var previews: some View {
-        MyCoffeeTabView()
+        MyCoffeeTabView().environmentObject(drinks)
     }
 }
 

@@ -4,6 +4,10 @@ struct listOfCoffeeSection: View{
     
     @EnvironmentObject var drinks: listDrinks
     
+    @State var number1 = 3
+    
+    @State var number2 = 6
+
     
     
     var body:some View{
@@ -20,7 +24,7 @@ struct listOfCoffeeSection: View{
 //                    ForEach(0 ..< 5) { number in
                         
                         
-                        MyDrinkView().environmentObject(drinks)
+                    MyDrinkView(number: $number1).environmentObject(drinks)
                         
 //                    }
                 }
@@ -57,7 +61,7 @@ struct listOfCoffeeSection: View{
                     .border(Color.white)
                 ScrollView (.vertical){
 //                    ForEach(0 ..< 15) { number in
-                    MyDrinkView()
+                    MyDrinkView(number: $number2)
 //                        .border(Color.black)
 //                    }
                 }.border(Color.black)
@@ -98,13 +102,11 @@ struct MyDrinkView: View{
     
     @ObservedObject var drinks = listDrinks()
     
-    //@StateObject var drinkList = [userDrinkInfo]
-    
-    
+    @Binding var number: Int
     
     var body: some View{
         
-        ForEach(0 ..< 3){ num in
+        ForEach(0 ..< number){ num in
             NavigationLink(
                 destination: DetailsView(),
                 label: {
@@ -126,22 +128,6 @@ struct MyDrinkView: View{
         
     }
 }
-//struct DetailViewDrinkList: View{
-//    @State var drink = userDrinkInfo()
-//
-//    var body: some View{
-//
-//        Section{
-//            Text(drink.drinkName)
-//            Text(drink.bean)
-//            Text(drink.bean)
-//            Text(drink.bean)
-//            Text(drink.bean)
-//
-//        }.background(Color("myCoffeeTurquoise"))
-//
-//    }
-//}
 
 struct FavDrinkView: View{
     var body: some View{

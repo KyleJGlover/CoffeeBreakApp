@@ -17,20 +17,20 @@ struct CreateOrder: View {
     var calendar = Calendar.current
     var closedRange: ClosedRange<Date> {
         let currentDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
-        let DaysSevenLater = Calendar.current.date(byAdding: .day, value: 7, to: Date())!
-        return currentDate...DaysSevenLater
+        let SevenDaysLater = Calendar.current.date(byAdding: .day, value: 7, to: Date())!
+        return currentDate...SevenDaysLater
     }
     var body: some View {
         VStack{
-            HStack{
-                Text("Order Creation")
-                    .font(.title)
-                    .padding()
-                Spacer()
-            }
+//            HStack{
+//                Text("Order Creation")
+//                    .font(.title)
+//                    .padding()
+//                Spacer()
+//            }
         
             Form{
-                TextField("Group Name", text:$name)
+                TextField("Group Name", text:$newOrder.name)
                 NavigationLink(destination: MapUserView()){
                     Text(location)
                 }
