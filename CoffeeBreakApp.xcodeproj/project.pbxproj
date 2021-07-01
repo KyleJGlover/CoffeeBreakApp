@@ -43,6 +43,7 @@
 		5C163B63268835F2008C6D14 /* ExtraDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B62268835F2008C6D14 /* ExtraDetailView.swift */; };
 		5C163B65268919E7008C6D14 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B64268919E7008C6D14 /* NavigationBarModifier.swift */; };
 		5C163B68268930BF008C6D14 /* AddDrinkOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B67268930BF008C6D14 /* AddDrinkOrder.swift */; };
+		5C3E7135268D385400D07AA0 /* AddMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E7134268D385400D07AA0 /* AddMembers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		5C163B62268835F2008C6D14 /* ExtraDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraDetailView.swift; sourceTree = "<group>"; };
 		5C163B64268919E7008C6D14 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		5C163B67268930BF008C6D14 /* AddDrinkOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDrinkOrder.swift; sourceTree = "<group>"; };
+		5C3E7134268D385400D07AA0 /* AddMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,11 +217,8 @@
 		5C163B272686C51B008C6D14 /* SubviewsGroupTab */ = {
 			isa = PBXGroup;
 			children = (
-				5C163B282686C51B008C6D14 /* ViewOrder.swift */,
+				5C3E7133268D16F700D07AA0 /* OrderLayoutViews */,
 				5C163B6626893093008C6D14 /* AddDrinkView */,
-				5C163B2A2686C51B008C6D14 /* ActiveOrder.swift */,
-				5C163B342686C51B008C6D14 /* InactiveOrder.swift */,
-				5C163B292686C51B008C6D14 /* CreateOrder.swift */,
 				5C163B2B2686C51B008C6D14 /* MapViewComponents */,
 			);
 			path = SubviewsGroupTab;
@@ -299,6 +298,18 @@
 				5C163B67268930BF008C6D14 /* AddDrinkOrder.swift */,
 			);
 			path = AddDrinkView;
+			sourceTree = "<group>";
+		};
+		5C3E7133268D16F700D07AA0 /* OrderLayoutViews */ = {
+			isa = PBXGroup;
+			children = (
+				5C163B282686C51B008C6D14 /* ViewOrder.swift */,
+				5C163B2A2686C51B008C6D14 /* ActiveOrder.swift */,
+				5C163B342686C51B008C6D14 /* InactiveOrder.swift */,
+				5C163B292686C51B008C6D14 /* CreateOrder.swift */,
+				5C3E7134268D385400D07AA0 /* AddMembers.swift */,
+			);
+			path = OrderLayoutViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +408,7 @@
 				5C163AC42686C190008C6D14 /* APIService.swift in Sources */,
 				5C163B492686C51B008C6D14 /* PlaceListView.swift in Sources */,
 				5C163B432686C51B008C6D14 /* FriendsTabView.swift in Sources */,
+				5C3E7135268D385400D07AA0 /* AddMembers.swift in Sources */,
 				5C163B552686C61A008C6D14 /* DataModel.swift in Sources */,
 				5C163B512686C51B008C6D14 /* CreateNewDrinkBtnSection.swift in Sources */,
 				5C163B452686C51B008C6D14 /* CreateOrder.swift in Sources */,

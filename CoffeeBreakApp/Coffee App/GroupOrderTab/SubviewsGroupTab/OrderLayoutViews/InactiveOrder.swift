@@ -75,7 +75,7 @@ struct InactiveOrder: View {
 
 
 struct InactiveOrder_Previews: PreviewProvider {
-    @StateObject static var order: Order = Order(isActive: true, owner: "Kyle", name: "My Order",time:"4:00PM", date: "06/05/2021", location: "Philz", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
+    @ObservedObject static var order: Order = Order(isActive: true, owner: "Kyle", name: "My Order",time:"4:00PM", date: "06/05/2021", location: "Philz", address: "134 Bay St", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
 
     static var previews: some View {
         

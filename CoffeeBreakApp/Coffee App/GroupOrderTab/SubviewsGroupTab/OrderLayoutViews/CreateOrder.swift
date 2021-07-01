@@ -10,10 +10,9 @@ import SwiftUI
 
 struct CreateOrder: View {
     @ObservedObject var newOrder = Order()
-    
-    @State var name = ""
-    @State var location = "Location"
+
     @State var date = Date()
+    
     var calendar = Calendar.current
     var closedRange: ClosedRange<Date> {
         let currentDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
@@ -31,27 +30,47 @@ struct CreateOrder: View {
         
             Form{
                 TextField("Group Name", text:$newOrder.name)
-                NavigationLink(destination: MapUserView()){
-                    Text(location)
-                }
+                    .padding(.top)
+                    .padding(.bottom)
+                NavigationLink(destination: MapUserView(newOrder: self.newOrder)){
+                    VStack{
+                        Text(newOrder.location)
+                        Text(newOrder.address)
+                    }
+                }.padding(.top)
                 DatePicker("Date/Time", selection:$date, in:closedRange)
                     .datePickerStyle(WheelDatePickerStyle())
                     .clipped()
                 
+                NavigationLink(destination: AddMembers()){
+                    ForEach(0 ..< newOrder.members.count) { num in
+                        VStack{
+                            Text(newOrder.members[num])
+                        }
+                    }
+                }.padding(.top)
+                .padding(.bottom)
                 
                 Section {
-                    Button(action: {
-                        createOrder(name: name, location: location, date: date)
-                    }) {
-                        Text("Create Order")
-                            .accentColor(.blue)
+                    HStack{
+                    Spacer()
+                        Button(action: {
+                            createOrder(newOrder: newOrder, date: date)
+                        }) {
+                            Text("Create Order")
+                                .accentColor(Color.blue)
+                            
+                        }
+                    Spacer()
+
                     }
+                    
                 }
             }
-        }.navigationBarColor(backgroundColor: .white, titleColor: .black)
-        .navigationBarTitle("Create Your Order")
+        }
+        .navigationBarTitle("Order Details")
     }
-    func createOrder(name:String, location:String , date: Date) {
+    func createOrder(newOrder: Order, date: Date) {
 //        let calendar = Calendar.current
 //        let hour = calendar.component(.hour, from: date)
 //        let minutes = calendar.component(.minute, from: date)

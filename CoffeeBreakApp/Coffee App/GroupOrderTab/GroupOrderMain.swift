@@ -9,26 +9,29 @@ class Order: ObservableObject  {
     @Published var time:String = ""
     @Published var date: String = ""
     @Published var location: String = ""
+    @Published var address: String = ""
     @Published var members: [String] = [""]
     @Published var memberDrinksName: [String] = [""]
     init(){
         self.isActive = true
         self.owner = "Owner"
-        self.name = "Name"
+        self.name = ""
         self.time = "Time"
         self.date = "Date"
         self.location = "Location"
-        self.members = [""]
+        self.address = ""
+        self.members = ["Members"]
         self.memberDrinksName = [""]
     }
     
-    init( isActive:Bool, owner:String, name:String, time:String, date:String, location:String, members:[String], memberDrinksName:[String] ){
+    init( isActive:Bool, owner:String, name:String, time:String, date:String, location:String, address:String, members:[String], memberDrinksName:[String] ){
         self.isActive = isActive
         self.owner = owner
         self.name = name
         self.time = time
         self.date = date
         self.location = location
+        self.address = address
         self.members = members
         self.memberDrinksName = memberDrinksName
     }
@@ -41,9 +44,9 @@ class OrderList: ObservableObject{
     @Published var isLoading: Bool = false
     //suppose to be add order but the onappear() function is not working
     init(){
-        let order1 = Order( isActive: true, owner: "Kyle", name: "Color",time:"4:00PM", date: "06/05/2021", location: "Philz", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
-        let order2 = Order( isActive: true, owner: "Stephen", name: "JNJ",time:"4:00PM", date: "08/01/2021", location: "Philz", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
-        let order3 = Order( isActive: false, owner: "Blake", name: "CSC688",time:"4:00PM", date: "01/08/2021", location: "Philz", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
+        let order1 = Order( isActive: true, owner: "Kyle", name: "Color",time:"4:00PM", date: "06/05/2021", location: "Philz", address: "134 Bay St", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
+        let order2 = Order( isActive: true, owner: "Stephen", name: "JNJ",time:"4:00PM", date: "08/01/2021", location: "Philz", address: "134 Bay St", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
+        let order3 = Order( isActive: false, owner: "Blake", name: "CSC688",time:"4:00PM", date: "01/08/2021", location: "Philz", address: "134 Bay St", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
         
 //        DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.orderList.append(order1)

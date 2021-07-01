@@ -10,10 +10,14 @@ import MapKit
 
 struct PlaceListView: View {
     
+    @ObservedObject var newOrder: Order
+    
     let landmarks: [Landmark]
     var onTap: () -> ()
 //    @State var drinkLocation: String
 //    @State var locationName: String
+    
+    
     
     var body: some View {
         VStack(alignment:.leading){
@@ -29,7 +33,7 @@ struct PlaceListView: View {
                 ForEach(self.landmarks, id:\.id) { landmarks in
                     VStack (alignment: .leading){
                         Button(action: {
-                            createOrderLocation(name:landmarks.name, title: landmarks.title )
+                            createOrderLocation(name:landmarks.name, title: landmarks.title, newOrder: newOrder)
                         }){
                             Text(landmarks.name)
                                 .fontWeight(.bold)
@@ -42,16 +46,16 @@ struct PlaceListView: View {
         
         
     }
-    func createOrderLocation(name:String, title:String){
-        let locationName: String = name
-        let locationTitle: String = title
-        print(locationName)
-        print(locationTitle)
+    func createOrderLocation(name:String, title:String, newOrder: Order){
+        newOrder.location = name
+        newOrder.address = title
+        print(newOrder.location)
+        print(newOrder.address)
     }
 }
 
-struct PlaceListView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlaceListView(landmarks: [Landmark(placemark: MKPlacemark())]) {}
-    }
-}
+//struct PlaceListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlaceListView(landmarks: [Landmark(placemark: MKPlacemark())], ) {}
+//    }
+//}

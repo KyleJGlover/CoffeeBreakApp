@@ -9,6 +9,8 @@ import MapKit
 import SwiftUI
 
 struct MapUserView: View {
+    
+    @ObservedObject var newOrder: Order
 
     @ObservedObject var locationManager = LocationManager()
     @State private var landmarks: [Landmark] = [Landmark]()
@@ -34,7 +36,7 @@ struct MapUserView: View {
     
     func calculateOffset() -> CGFloat {
         if self.landmarks.count > 0 && !self.tapped {
-            return UIScreen.main.bounds.size.height - UIScreen.main.bounds.size.height / 4
+            return UIScreen.main.bounds.size.height - UIScreen.main.bounds.size.height / 3
         }
         else if self.tapped {
             return 100
@@ -55,9 +57,9 @@ struct MapUserView: View {
                 self.getNearByLandmarks()
             }.textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
-            .offset(y: -40)
+//            .offset(y: -0)
             
-            PlaceListView(landmarks: self.landmarks) {
+            PlaceListView(newOrder: self.newOrder, landmarks: self.landmarks) {
                 // do something
                 self.tapped.toggle()
             }.animation(.spring())
@@ -67,7 +69,10 @@ struct MapUserView: View {
 }
 
 struct MapUserView_Previews: PreviewProvider {
+    
+    @ObservedObject static var newOrder: Order = Order()
+    
     static var previews: some View {
-        MapUserView()
+        MapUserView(newOrder: newOrder)
     }
 }
