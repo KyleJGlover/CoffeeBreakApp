@@ -18,35 +18,45 @@ struct profile: View {
 
             
     ZStack{
-        Color("myCoffeeControlColor")
+        Color("myCoffeeBlack")
             .ignoresSafeArea()
+        
         VStack{
             
-            HStack(spacing: 35){
+            HStack(spacing: 76){
                 
                 Text("CoffeeBreak")
-                    .font(.system(size: 44, weight: .bold, design: .default))
+                    .font(.system(size: 40, weight: .bold, design: .default))
                     .foregroundColor(Color(.white))
+                
+                
             VStack{
                 
                 Image("CoffeeBreakIcon")
-                    
+                    .resizable()
+                    .frame(width: 50, height: 50, alignment: .topTrailing)
+                    .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                    .cornerRadius(25)
                 } .padding(.horizontal)
                 
             }
             .frame(maxWidth: .infinity, alignment: .leading);
-            
+            Divider().frame(height: 1).background(Color.black)
+                .offset(y:1)
             
             HStack(spacing: 15) {
-                HStack(spacing: 15) {                     Image("Frap")
+                HStack(spacing: 15) {
+                    Image("animoji1")
                          .resizable()
                          .frame(width: 50, height: 50, alignment: .center)
                          .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                          .cornerRadius(25)
-                    Text("Stephen") .fontWeight(.bold)
-                        .foregroundColor(Color(.white));Spacer()
+                    Text("Stephen")  .font(.system(size: 25, weight: .bold, design: .default))
+                       .foregroundColor(Color(.white));
+                    Spacer()
                     }
                 }
+           
             
             VStack{
                 
@@ -56,16 +66,17 @@ struct profile: View {
                
             }.frame(maxWidth: .infinity, alignment: .leading)
             .offset(y:10)
-            
+            ;Divider().frame(height: 1).background(Color.black)
+                .offset(y:35)
             
     ZStack{
         Color("black")
             //.ignoresSafeArea()
-        
-                    VStack{
+                     VStack{
                         Text("Top 5")
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                            .foregroundColor(Color(.white));                     ScrollView(.horizontal, showsIndicators: false){
+                            .foregroundColor(Color(.white));
+                        ScrollView(.horizontal, showsIndicators: false){
                             HStack(spacing: 3){
                                 ForEach(stories, id: \.self){name in
                                 Image(name)
@@ -77,9 +88,11 @@ struct profile: View {
                                         Spacer()
                                     }
                                   }
-                                }
-                                
-                            }
+                        };Divider().frame(height: 1).background(Color.black)
+                            .offset(y:30)
+                        
+                     }
+        
         
                         }
             ZStack{
@@ -88,7 +101,8 @@ struct profile: View {
                             VStack{
                                 Text("All Drinks")
                                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                                    .foregroundColor(Color(.white));                     ScrollView(.horizontal, showsIndicators: false){
+                                    .foregroundColor(Color(.white));
+                                ScrollView(.horizontal, showsIndicators: false){
                                     HStack(spacing: 3){
                                         ForEach(stories2, id: \.self){name in
                                         Image(name)
@@ -105,14 +119,13 @@ struct profile: View {
                                   
                                 }
                 
-                            }.background(Color.black)
+            }.background(Color("myCoffeeControlColor"))
             
-                    }.background(Color.black)
-
-        
-            }
-            
+                    }.background(Color("myCoffeeControlColor"))
+        //Divider().frame(height: 1).background(Color.black)
+            //.offset(y:40)
         }
+    }
     
 }
 
@@ -123,3 +136,4 @@ struct profile_Previews: PreviewProvider {
         profile(friendpeek: friendpeek)
     }
 }
+
