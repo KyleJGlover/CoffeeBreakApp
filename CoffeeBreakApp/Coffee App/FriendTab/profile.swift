@@ -26,9 +26,9 @@ struct profile: View {
             HStack(spacing: 76){
                 
                 Text("CoffeeBreak")
-                    .font(.system(size: 40, weight: .bold, design: .default))
+                    .font(.system(size: 32, weight: .bold, design: .default))
                     .foregroundColor(Color(.white))
-                
+                    
                 
             VStack{
                 
@@ -38,11 +38,12 @@ struct profile: View {
                     .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                     .cornerRadius(25)
                 } .padding(.horizontal)
+            .offset(x:1)
                 
-            }
-            .frame(maxWidth: .infinity, alignment: .leading);
-            Divider().frame(height: 1).background(Color.black)
-                .offset(y:1)
+            }.padding()
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color.black)            ;
+            
             
             HStack(spacing: 15) {
                 HStack(spacing: 15) {
@@ -54,8 +55,9 @@ struct profile: View {
                     Text("Stephen")  .font(.system(size: 25, weight: .bold, design: .default))
                        .foregroundColor(Color(.white));
                     Spacer()
-                    }
-                }
+                    }.padding()
+                
+            }
            
             
             VStack{
@@ -64,10 +66,11 @@ struct profile: View {
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .foregroundColor(Color(.white));
                
-            }.frame(maxWidth: .infinity, alignment: .leading)
-            .offset(y:10)
+            }.padding()
+            .frame(maxWidth: .infinity, alignment: .leading)
+            //.offset(y:10)
             ;Divider().frame(height: 1).background(Color.black)
-                .offset(y:35)
+                //.offset(y:35)
             
     ZStack{
         Color("black")
