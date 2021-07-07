@@ -18,8 +18,6 @@
 		5C163AC42686C190008C6D14 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163ABB2686C190008C6D14 /* APIService.swift */; };
 		5C163AC52686C190008C6D14 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163ABC2686C190008C6D14 /* Extension.swift */; };
 		5C163B412686C51B008C6D14 /* MeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B222686C51B008C6D14 /* MeTabView.swift */; };
-		5C163B422686C51B008C6D14 /* FriendDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B242686C51B008C6D14 /* FriendDetails.swift */; };
-		5C163B432686C51B008C6D14 /* FriendsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B252686C51B008C6D14 /* FriendsTabView.swift */; };
 		5C163B442686C51B008C6D14 /* ViewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B282686C51B008C6D14 /* ViewOrder.swift */; };
 		5C163B452686C51B008C6D14 /* CreateOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B292686C51B008C6D14 /* CreateOrder.swift */; };
 		5C163B462686C51B008C6D14 /* ActiveOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B2A2686C51B008C6D14 /* ActiveOrder.swift */; };
@@ -44,6 +42,13 @@
 		5C163B65268919E7008C6D14 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B64268919E7008C6D14 /* NavigationBarModifier.swift */; };
 		5C163B68268930BF008C6D14 /* AddDrinkOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B67268930BF008C6D14 /* AddDrinkOrder.swift */; };
 		5C3E7135268D385400D07AA0 /* AddMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E7134268D385400D07AA0 /* AddMembers.swift */; };
+		CD2074ED26940389008223D0 /* Friending.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074EC26940389008223D0 /* Friending.swift */; };
+		CD2074EF269403DB008223D0 /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074EE269403DB008223D0 /* FriendProfileView.swift */; };
+		CD2074F126940415008223D0 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074F026940415008223D0 /* profile.swift */; };
+		CD2074F326940443008223D0 /* FriendRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074F226940443008223D0 /* FriendRowView.swift */; };
+		CD2074F526940464008223D0 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074F426940464008223D0 /* Home.swift */; };
+		CD2074F7269404A9008223D0 /* CustomScrollViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074F6269404A9008223D0 /* CustomScrollViewApp.swift */; };
+		CD2074F9269404CE008223D0 /* FriendContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074F8269404CE008223D0 /* FriendContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +65,6 @@
 		5C163ABB2686C190008C6D14 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5C163ABC2686C190008C6D14 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5C163B222686C51B008C6D14 /* MeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTabView.swift; sourceTree = "<group>"; };
-		5C163B242686C51B008C6D14 /* FriendDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendDetails.swift; sourceTree = "<group>"; };
-		5C163B252686C51B008C6D14 /* FriendsTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTabView.swift; sourceTree = "<group>"; };
 		5C163B282686C51B008C6D14 /* ViewOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOrder.swift; sourceTree = "<group>"; };
 		5C163B292686C51B008C6D14 /* CreateOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOrder.swift; sourceTree = "<group>"; };
 		5C163B2A2686C51B008C6D14 /* ActiveOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveOrder.swift; sourceTree = "<group>"; };
@@ -86,6 +89,13 @@
 		5C163B64268919E7008C6D14 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		5C163B67268930BF008C6D14 /* AddDrinkOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDrinkOrder.swift; sourceTree = "<group>"; };
 		5C3E7134268D385400D07AA0 /* AddMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembers.swift; sourceTree = "<group>"; };
+		CD2074EC26940389008223D0 /* Friending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friending.swift; sourceTree = "<group>"; };
+		CD2074EE269403DB008223D0 /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
+		CD2074F026940415008223D0 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
+		CD2074F226940443008223D0 /* FriendRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRowView.swift; sourceTree = "<group>"; };
+		CD2074F426940464008223D0 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		CD2074F6269404A9008223D0 /* CustomScrollViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollViewApp.swift; sourceTree = "<group>"; };
+		CD2074F8269404CE008223D0 /* FriendContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				5C163AA02686C0DC008C6D14 /* CoffeeBreakApp */,
-				5C163A9F2686C0DC008C6D14 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +122,7 @@
 				5C163A9E2686C0DC008C6D14 /* CoffeeBreakApp.app */,
 			);
 			name = Products;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		5C163AA02686C0DC008C6D14 /* CoffeeBreakApp */ = {
@@ -132,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				5C163AA82686C0DD008C6D14 /* Preview Assets.xcassets */,
+				5C163A9F2686C0DC008C6D14 /* Products */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -199,8 +210,13 @@
 		5C163B232686C51B008C6D14 /* FriendTab */ = {
 			isa = PBXGroup;
 			children = (
-				5C163B242686C51B008C6D14 /* FriendDetails.swift */,
-				5C163B252686C51B008C6D14 /* FriendsTabView.swift */,
+				CD2074F426940464008223D0 /* Home.swift */,
+				CD2074F226940443008223D0 /* FriendRowView.swift */,
+				CD2074F026940415008223D0 /* profile.swift */,
+				CD2074F6269404A9008223D0 /* CustomScrollViewApp.swift */,
+				CD2074F8269404CE008223D0 /* FriendContentView.swift */,
+				CD2074EE269403DB008223D0 /* FriendProfileView.swift */,
+				CD2074EB269402FA008223D0 /* FriendsTabModel */,
 			);
 			path = FriendTab;
 			sourceTree = "<group>";
@@ -312,6 +328,14 @@
 			path = OrderLayoutViews;
 			sourceTree = "<group>";
 		};
+		CD2074EB269402FA008223D0 /* FriendsTabModel */ = {
+			isa = PBXGroup;
+			children = (
+				CD2074EC26940389008223D0 /* Friending.swift */,
+			);
+			path = FriendsTabModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -383,12 +407,13 @@
 			files = (
 				5C163B4E2686C51B008C6D14 /* GroupOrderMain.swift in Sources */,
 				5C163B442686C51B008C6D14 /* ViewOrder.swift in Sources */,
+				CD2074F9269404CE008223D0 /* FriendContentView.swift in Sources */,
 				5C163B502686C51B008C6D14 /* listOfCoffeeSection.swift in Sources */,
 				5C163B68268930BF008C6D14 /* AddDrinkOrder.swift in Sources */,
 				5C163AC12686C190008C6D14 /* LoginView.swift in Sources */,
 				5C163B412686C51B008C6D14 /* MeTabView.swift in Sources */,
 				5C163AA22686C0DC008C6D14 /* CoffeeBreakAppApp.swift in Sources */,
-				5C163B422686C51B008C6D14 /* FriendDetails.swift in Sources */,
+				CD2074F126940415008223D0 /* profile.swift in Sources */,
 				5C163AC52686C190008C6D14 /* Extension.swift in Sources */,
 				5C163B4A2686C51B008C6D14 /* MapView.swift in Sources */,
 				5C163B5A2686C69C008C6D14 /* Models.swift in Sources */,
@@ -396,23 +421,27 @@
 				5C163B65268919E7008C6D14 /* NavigationBarModifier.swift in Sources */,
 				5C163B4F2686C51B008C6D14 /* MyCoffeeTabView.swift in Sources */,
 				5C163B462686C51B008C6D14 /* ActiveOrder.swift in Sources */,
+				CD2074ED26940389008223D0 /* Friending.swift in Sources */,
 				5C163B4C2686C51B008C6D14 /* MapUserView.swift in Sources */,
 				5C163B472686C51B008C6D14 /* LandmarkAnnotation.swift in Sources */,
+				CD2074F326940443008223D0 /* FriendRowView.swift in Sources */,
 				5C163ABF2686C190008C6D14 /* Credentials.swift in Sources */,
 				5C163B5E268819CB008C6D14 /* SecureLevelView.swift in Sources */,
+				CD2074F526940464008223D0 /* Home.swift in Sources */,
 				5C163B482686C51B008C6D14 /* Landmark.swift in Sources */,
+				CD2074F7269404A9008223D0 /* CustomScrollViewApp.swift in Sources */,
 				5C163B61268832D2008C6D14 /* DetailsView.swift in Sources */,
 				5C163B532686C51B008C6D14 /* FriendRecentDrinkHScroll.swift in Sources */,
 				5C163B4D2686C51B008C6D14 /* InactiveOrder.swift in Sources */,
 				5C163B63268835F2008C6D14 /* ExtraDetailView.swift in Sources */,
 				5C163AC42686C190008C6D14 /* APIService.swift in Sources */,
 				5C163B492686C51B008C6D14 /* PlaceListView.swift in Sources */,
-				5C163B432686C51B008C6D14 /* FriendsTabView.swift in Sources */,
 				5C3E7135268D385400D07AA0 /* AddMembers.swift in Sources */,
 				5C163B552686C61A008C6D14 /* DataModel.swift in Sources */,
 				5C163B512686C51B008C6D14 /* CreateNewDrinkBtnSection.swift in Sources */,
 				5C163B452686C51B008C6D14 /* CreateOrder.swift in Sources */,
 				5C163B4B2686C51B008C6D14 /* LocationManager.swift in Sources */,
+				CD2074EF269403DB008223D0 /* FriendProfileView.swift in Sources */,
 				5C163AC32686C190008C6D14 /* SignUpView.swift in Sources */,
 				5C163B522686C51B008C6D14 /* MainView.swift in Sources */,
 				5C163ABD2686C190008C6D14 /* Authentication.swift in Sources */,
@@ -541,7 +570,6 @@
 		5C163AAE2686C0DD008C6D14 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -565,7 +593,6 @@
 		5C163AAF2686C0DD008C6D14 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;

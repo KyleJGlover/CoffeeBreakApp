@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct MainView: View {
+   
+
     
+        
+    @ObservedObject static var friendpeek = Friendpeek (id:0, Name: "stephen", AboutMe: "I like Iced Coffee", Image: "animoji3")
+      
+        
     @State private var selection = 1
     
+  
     init() {
+        
             UITabBar.appearance().barTintColor = UIColor.black
         }
+    
     var body: some View
     {
             TabView (selection: $selection){
@@ -27,7 +36,7 @@ struct MainView: View {
                         }
                     .tag(1)
 
-             FriendsTabView()
+                FriendContentView(friendpeek: MainView.friendpeek)
                  .tabItem {
                     VStack{
                         Image(systemName: "person.3")
