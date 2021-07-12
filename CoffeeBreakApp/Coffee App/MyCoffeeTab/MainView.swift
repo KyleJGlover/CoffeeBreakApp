@@ -45,7 +45,7 @@ struct MainView: View {
                      }
                      .tag(2)
 
-            MeTabView()
+                MeTabView(friendpeek: MainView.friendpeek)
                 .tabItem {
                     VStack{
                         Image(systemName: "person")

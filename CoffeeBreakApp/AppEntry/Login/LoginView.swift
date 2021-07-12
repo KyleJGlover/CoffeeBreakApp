@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
     
@@ -123,6 +124,7 @@ struct LoginView: View {
 }
 
 struct LoginView_Previews: PreviewProvider {
+   
     static var previews: some View {
         LoginView()
     }
