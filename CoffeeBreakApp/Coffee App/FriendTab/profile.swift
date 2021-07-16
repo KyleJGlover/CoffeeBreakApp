@@ -55,7 +55,29 @@ struct profile: View {
                     Text("Stephen")  .font(.system(size: 25, weight: .bold, design: .default))
                        .foregroundColor(Color(.white));
                     Spacer()
-                    }.padding()
+                                       
+                    Button(action:{
+                        print("checkmark")
+                    }){
+                        HStack{
+                            Text("Add Friend")
+                                .padding(.bottom);
+                            
+                            
+                                //.padding(.bottom)
+                            
+                        }
+                        
+                    }.frame(alignment: .trailing)
+                    .padding(.horizontal)
+                    
+                    
+                        
+                    Button("Remove"){
+                        
+                    }.frame( alignment: .trailing)
+                
+                }.padding()
                 
             }
            
@@ -127,6 +149,7 @@ struct profile: View {
                     }.background(Color("myCoffeeControlColor"))
         //Divider().frame(height: 1).background(Color.black)
             //.offset(y:40)
+            
         }
     }
     
