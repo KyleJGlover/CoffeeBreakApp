@@ -48,7 +48,7 @@ struct MeTabView: View {
                 
                 HStack(spacing: 15) {
                     HStack(spacing: 15) {
-                        Image("animoji1")
+                        Image("animoji3")
                              .resizable()
                              .frame(width: 50, height: 50, alignment: .center)
                              .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)

@@ -41,7 +41,7 @@ struct Home: View {
                         
                         (
                         
-                            Text("My Friends ")
+                            Text("Add Friends ")
                                 .fontWeight(.bold)
                                 .foregroundColor(.primary)
                      
@@ -137,7 +137,7 @@ struct Home: View {
 }
 
 struct Home_Previews: PreviewProvider {
-    @ObservedObject static var friendpeek = Friendpeek (id:0, Name: "stephen", AboutMe: "I like Iced Coffee", Image: "animoji3");
+    @ObservedObject static var friendpeek = Friendpeek (id:0, Name: "stephen", AboutMe: "I like Iced Coffee", Image: "animoji1");
     
     static var previews: some View {
         Home(friendpeek: friendpeek)

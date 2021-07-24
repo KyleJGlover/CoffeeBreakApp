@@ -56,7 +56,7 @@ struct FriendProfileView: View {
 
 
 struct FriendProfileView_Previews: PreviewProvider {
-    @ObservedObject static var friendpeek = Friendpeek (id:0, Name: "stephen", AboutMe: "I like Iced Coffee", Image: "animoji3");
+    @ObservedObject static var friendpeek = Friendpeek (id:0, Name: "stephen", AboutMe: "I like Iced Coffee", Image: "animoji1");
     static var previews: some View {
         Group{
         FriendProfileView(friendpeek: friendpeek)
