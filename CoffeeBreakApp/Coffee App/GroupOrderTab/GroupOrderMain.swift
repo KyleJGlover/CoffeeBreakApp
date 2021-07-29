@@ -67,6 +67,8 @@ struct GroupOrderMain: View {
     
     //Group order will contain Owner, Location, a time and members (With drinks for each)
     
+    @EnvironmentObject var userProfile: Profile
+    
     @StateObject var order: OrderList = OrderList()
     
     

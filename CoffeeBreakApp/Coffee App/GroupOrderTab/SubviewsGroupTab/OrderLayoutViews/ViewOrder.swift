@@ -11,6 +11,8 @@ struct ViewOrder: View {
     
     @State private var isModal: Bool = false
     
+    
+    
     @ObservedObject var order: Order
 
     var body: some View {
@@ -80,7 +82,7 @@ struct ViewOrder: View {
                                                 }) {
                                                     Image(systemName:"plus")
                                                 }.sheet(isPresented: $isModal, content: {
-                                                    ExtraDetailView()
+                                                    DetailsView()
                                                 })
                                                 .padding()
                                             }

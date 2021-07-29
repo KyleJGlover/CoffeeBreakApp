@@ -8,16 +8,12 @@
 import SwiftUI
 
 struct MainView: View {
-   
-
+        
+    @EnvironmentObject var userProfile:Profile
     
-        
     @ObservedObject static var friendpeek = Friendpeek (id:0, Name: "stephen", AboutMe: "I like Iced Coffee", Image: "animoji3")
-      
-        
     @State private var selection = 1
     
-  
     init() {
         
             UITabBar.appearance().barTintColor = UIColor.black
@@ -26,41 +22,45 @@ struct MainView: View {
     var body: some View
     {
             TabView (selection: $selection){
+                
             MyCoffeeTabView()
+                .environmentObject(userProfile)
                 .tabItem {
                     VStack{
                         Image(systemName: "macpro.gen2")
-                            .font(.title)
                         .accessibilityLabel("My Coffee")
-                        }
-                        }
-                    .tag(1)
+                    }
+                }
+                .tag(1)
 
-                FriendContentView(friendpeek: MainView.friendpeek)
-                 .tabItem {
+            FriendContentView(friendpeek: MainView.friendpeek)
+                .environmentObject(userProfile)
+                .tabItem {
                     VStack{
                         Image(systemName: "person.3")
                         .accessibilityLabel("Friends")
-                        }
-                     }
-                     .tag(2)
+                    }
+                 }
+                 .tag(2)
 
-                MeTabView(friendpeek: MainView.friendpeek)
+            MeTabView(friendpeek: MainView.friendpeek)
+                .environmentObject(userProfile)
                 .tabItem {
                     VStack{
                         Image(systemName: "person")
                         .accessibilityLabel("Profile")
-                        }
                     }
-                    .tag(3)
+                }
+                .tag(3)
             GroupOrderMain()
+                .environmentObject(userProfile)
                 .tabItem {
-                        VStack{
-                            Image(systemName: "square.and.pencil")
-                            .accessibilityLabel("My Coffee")
-                            }
+                    VStack{
+                        Image(systemName: "square.and.pencil")
+                        .accessibilityLabel("My Coffee")
                     }
-                    .tag(4)
+                }
+                .tag(4)
             }
             .accentColor(Color("myCoffeeWhiteSnow"))
             .navigationBarColor(backgroundColor: .black, titleColor: .white)

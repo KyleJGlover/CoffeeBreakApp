@@ -2,7 +2,9 @@ import SwiftUI
 
 struct MyCoffeeTabView: View {
     
-    let drinks = listDrinks()
+    @EnvironmentObject var userProfile:Profile
+    
+    @ObservedObject var drinks = listDrinks()
     
     var body: some View {
        NavigationView {
@@ -12,20 +14,24 @@ struct MyCoffeeTabView: View {
                     VStack {
                         //FriendRecentDrinkHScroll()
                         
-                        CreateNewDrinkBtnSection()
-                            .environmentObject(drinks)
+                        CreateNewDrinkBtn().environmentObject(userProfile)
+                            
                             .padding()
                             .padding(.top, 30)
 
-                        listOfCoffeeSection().environmentObject(drinks)
+                        listOfCoffeeSection(drinks: drinks).environmentObject(userProfile)
                         
                         VStack{
                             
                         }.frame(height: 50)
                     }
                 }.navigationBarTitle(Text("MyCoffee"))
-            }
+                .onAppear(perform: {
+                     drinks.grabListData(profile_id: userProfile.profile_id)
+                })
+       }
     }
+   
 }
 
 

@@ -19,6 +19,7 @@ struct SignUpView: View {
     @State private var showingErrorAlert = false
     
     
+    
     //@State var navBarHidden: Bool = true
 
     
@@ -59,26 +60,23 @@ struct SignUpView: View {
                             } // end button show pw
                             Spacer()
                         } // end HStack
-                        
-                        if !self.showPasswords {
-                            SecureField("Enter Password", text: $password1)
-                                .accessibilityLabel("Enter Password")
-                                .ignoresSafeArea(.keyboard, edges: .bottom)
+                        Group{
+                            if !self.showPasswords {
+                                SecureField("Enter Password", text: $password1)
+                                    .accessibilityLabel("Enter Password")
 
-                            SecureField("Re-enter Password", text: $password2)
-                                .accessibilityLabel("Re-enter Password")
-                                .ignoresSafeArea(.keyboard, edges: .bottom)
+                                SecureField("Re-enter Password", text: $password2)
+                                    .accessibilityLabel("Re-enter Password")
 
-                        } else {
-                            TextField("Enter Password", text: $password1)
-                                .accessibilityLabel("Enter Password")
-                                .ignoresSafeArea(.keyboard, edges: .bottom)
+                            } else {
+                                TextField("Enter Password", text: $password1)
+                                    .accessibilityLabel("Enter Password")
 
-                            TextField("Re-Enter Password", text: $password2)
-                                .accessibilityLabel("Re-enter Password")
-                                .ignoresSafeArea(.keyboard, edges: .bottom)
+                                TextField("Re-Enter Password", text: $password2)
+                                    .accessibilityLabel("Re-enter Password")
+                            }// end if show/hide pw fields
+                        }.ignoresSafeArea(.keyboard, edges: .bottom)
 
-                        } // end if show/hide pw fields
                         if !self.passwordChecker.password.isEmpty {
                             SecureLevelView(level: self.passwordChecker.level)
                         }
@@ -88,12 +86,17 @@ struct SignUpView: View {
                         Toggle(isOn: $terms) {
                             Text("Accept the terms and conditions")
                         } // end togle
-                        .accessibilityLabel("Accept the terms and conditions")
 
                             if self.terms{
                                 
                                 Button("Sign Up!"){
+
                                         if password1 == password2 {
+                                            let newProfile = RegistrationProfile(firstName: firstName, lastName: lastName, userName: userName, email: email, password: password1)
+                                            register(newProfile: newProfile){
+                                                (returnedMessage) in
+                                                
+                                            }
                                             clearSignUp(firstName: firstName, lastName: lastName, userName: userName, email: email, password1: password1, password2: password2, showPasswords: showPasswords, terms: terms)
                                             self.showingSuccessAlert = true
                                         }
@@ -135,6 +138,20 @@ struct SignUpView: View {
         self.showPasswords = false
         self.terms = false
                 
+    }
+    
+    func register(newProfile: RegistrationProfile, completion: @escaping (_ data:String) -> ()) {
+        APIService().register(newProfile:newProfile){ result in
+            switch result {
+            case .success(let message):
+                print(message)
+                completion(message)
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(error.localizedDescription)
+            }
+        }
+
     }
 }
 

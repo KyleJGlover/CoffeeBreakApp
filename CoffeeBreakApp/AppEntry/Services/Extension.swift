@@ -1,10 +1,3 @@
-//
-//  Extension.swift
-//  LoginPrototype
-//
-//  Created by Kyle Glover on 6/25/21.
-//
-
 import UIKit
 import SwiftUI
 

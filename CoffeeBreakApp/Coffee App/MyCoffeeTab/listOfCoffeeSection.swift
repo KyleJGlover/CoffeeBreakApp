@@ -2,13 +2,8 @@ import SwiftUI
 
 struct listOfCoffeeSection: View{
     
-    @EnvironmentObject var drinks: listDrinks
-    
-    @State var number1 = 3
-    
-    @State var number2 = 6
-
-    
+    @ObservedObject var drinks: listDrinks
+    @EnvironmentObject var userProfile:Profile
     
     var body:some View{
         HStack(alignment:.center){
@@ -20,15 +15,12 @@ struct listOfCoffeeSection: View{
                     .font(.custom("Helvetica Neue", size: 20))
                     .background(Color.black)
                     .border(Color.white)
+                
                 ScrollView (.vertical){
-//                    ForEach(0 ..< 5) { number in
-                        
-                        
-                    MyDrinkView(number: $number1).environmentObject(drinks)
-                        
-//                    }
+                    MyFavDrinkView(drinks: drinks).environmentObject(userProfile)
                 }
                 .border(Color.black)
+                
                 NavigationLink(
                     destination: addOrRemoveFavDrink(),
                         label: {
@@ -41,7 +33,6 @@ struct listOfCoffeeSection: View{
                                 .border(Color.white)
                             Spacer()
                 })
-                
             }
             
             Spacer()
@@ -49,9 +40,10 @@ struct listOfCoffeeSection: View{
             Image(systemName:"arrow.left.arrow.right")
                 .resizable()
                 .frame(width: 75.0, height: 75.0, alignment: .center)
-            
             Spacer()
+            
             //Your Drinks (Right) side of the page
+            
             VStack{
                 Text("Your Drinks")
                     .frame(width:120, height:30)
@@ -60,10 +52,7 @@ struct listOfCoffeeSection: View{
                     .background(Color.black)
                     .border(Color.white)
                 ScrollView (.vertical){
-//                    ForEach(0 ..< 15) { number in
-                    MyDrinkView(number: $number2)
-//                        .border(Color.black)
-//                    }
+                    listDrinkView(drinks: drinks).environmentObject(userProfile)
                 }.border(Color.black)
                 NavigationLink(
                     destination: addOrRemoveListDrink(),
@@ -98,46 +87,62 @@ struct addOrRemoveListDrink: View{
     }
 }
 
-struct MyDrinkView: View{
-    
-    @ObservedObject var drinks = listDrinks()
-    
-    @Binding var number: Int
+struct MyFavDrinkView: View{
+    @EnvironmentObject var userProfile:Profile
+    @ObservedObject var drinks:listDrinks
+    var noValue = "No Value"
     
     var body: some View{
         
-        ForEach(0 ..< number){ num in
-            NavigationLink(
-                destination: DetailsView(),
-                label: {
-                    VStack (alignment: .leading){
-                        Text("Name:\(self.drinks.drinkList[num].drinkName)")
-                            .font(.custom("Helvetica Neue", size: 10))
-                            .foregroundColor(.black)
-                        Text("Temperature:\(self.drinks.drinkList[num].temp)")
-                            .font(.custom("Helvetica Neue", size: 10))
-                            .foregroundColor(.black)
-                    }.frame(width:120, height: 80)
-                    .padding(.leading, 0)
-                    .scaledToFit()
-                    .background(Color("myCoffeeTurquoise"))
-                    .border(Color.black)
-                    
-            })
+        ForEach(drinks.drinkList) { drink in
+            if drink.isFavorite ?? false{
+                NavigationLink(
+                    destination: DetailsView(drink: drink).environmentObject(userProfile),
+                    label: {
+                        VStack (alignment: .leading){
+                            Text("Name:\(drink.drinkName ?? "")")
+                                .font(.custom("Helvetica Neue", size: 10))
+                                .foregroundColor(.black)
+                            Text("Temperature:\(drink.temperature ?? "")")
+                                .font(.custom("Helvetica Neue", size: 10))
+                                .foregroundColor(.black)
+                        }.frame(width:120, height: 80)
+                        .padding(.leading, 0)
+                        .scaledToFit()
+                        .background(Color("myCoffeeTurquoise"))
+                        .border(Color.black)
+                        
+                })
+                
+            }
+            
         }
-        
     }
 }
 
-struct FavDrinkView: View{
+struct listDrinkView: View{
+    @EnvironmentObject var userProfile:Profile
+    @ObservedObject var drinks:listDrinks
     var body: some View{
-        VStack (alignment: .leading){
-            Text("Drink Name")
-                .padding(0)
-                .font(.custom("Helvetica Neue", size: 14))
-            Text("is cold/hot")
-                .font(.custom("Helvetica Neue", size: 14))
-        }.frame(width:120, height: 80).padding(.leading, 0).scaledToFit()
+        ForEach(drinks.drinkList) { drink in
+                NavigationLink(
+                    destination: DetailsView(drink: drink).environmentObject(userProfile),
+                    label: {
+                        VStack (alignment: .leading){
+                            Text("Name:\(drink.drinkName ?? "")")
+                                .font(.custom("Helvetica Neue", size: 10))
+                                .foregroundColor(.black)
+                            Text("Temperature:\(drink.temperature ?? "")")
+                                .font(.custom("Helvetica Neue", size: 10))
+                                .foregroundColor(.black)
+                        }.frame(width:120, height: 80)
+                        .padding(.leading, 0)
+                        .scaledToFit()
+                        .background(Color("myCoffeeTurquoise"))
+                        .border(Color.black)
+                        
+                })
+        }
     }
 }
 
@@ -145,8 +150,8 @@ struct listOfCoffeeSection_Previews: PreviewProvider {
     @State static var drinks = listDrinks()
     
     static var previews: some View {
-        listOfCoffeeSection().environmentObject(self.drinks)
-        MyCoffeeTabView().environmentObject(self.drinks)
+        listOfCoffeeSection(drinks: drinks)
+        MyCoffeeTabView()
     }
 }
 

@@ -9,10 +9,12 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
+    @StateObject var loginVM = LoginViewModel()
     
-    @State private var showingErrorAlert = false
+    @EnvironmentObject var userProfile: Profile
+    
+    
 
     
     @State var navBarHidden: Bool = true
@@ -71,21 +73,14 @@ struct LoginView: View {
                     
                     HStack{
                         Button("Login") {
-                            loginVM.login { success in
-                                authentication.updateValidation(success: success)
-                                if !authentication.isValidated{
-                                    showingErrorAlert = true
-                                    loginVM.credentials.email = ""
-                                    loginVM.credentials.password = ""
-                                    
-                                }
-                            }
-                        }.frame(width: UIScreen.main.bounds.size.width - 100)
+                            loginVM.login(authentication: authentication, userProfile: userProfile)
+                                
+                    }.frame(width: UIScreen.main.bounds.size.width - 100)
                     .padding()
                     .background(Color.green)
                     .cornerRadius(10)
                     .disabled(loginVM.loginDisabled)
-                    .alert(isPresented: $showingErrorAlert, content: {
+                        .alert(isPresented: $loginVM.showingErrorAlert, content: {
                         Alert(
                             title: Text("Warning"),
                             message: Text("Username and password combination incorrect!"),

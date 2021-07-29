@@ -31,17 +31,22 @@
 		5C163B4E2686C51B008C6D14 /* GroupOrderMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B352686C51B008C6D14 /* GroupOrderMain.swift */; };
 		5C163B4F2686C51B008C6D14 /* MyCoffeeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B382686C51B008C6D14 /* MyCoffeeTabView.swift */; };
 		5C163B502686C51B008C6D14 /* listOfCoffeeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B392686C51B008C6D14 /* listOfCoffeeSection.swift */; };
-		5C163B512686C51B008C6D14 /* CreateNewDrinkBtnSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B3A2686C51B008C6D14 /* CreateNewDrinkBtnSection.swift */; };
+		5C163B512686C51B008C6D14 /* CreateNewDrinkBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B3A2686C51B008C6D14 /* CreateNewDrinkBtn.swift */; };
 		5C163B522686C51B008C6D14 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B3B2686C51B008C6D14 /* MainView.swift */; };
 		5C163B532686C51B008C6D14 /* FriendRecentDrinkHScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B3C2686C51B008C6D14 /* FriendRecentDrinkHScroll.swift */; };
 		5C163B552686C61A008C6D14 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B542686C61A008C6D14 /* DataModel.swift */; };
 		5C163B5A2686C69C008C6D14 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B582686C69C008C6D14 /* Models.swift */; };
 		5C163B5E268819CB008C6D14 /* SecureLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B5D268819CB008C6D14 /* SecureLevelView.swift */; };
 		5C163B61268832D2008C6D14 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B60268832D2008C6D14 /* DetailsView.swift */; };
-		5C163B63268835F2008C6D14 /* ExtraDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B62268835F2008C6D14 /* ExtraDetailView.swift */; };
+		5C163B63268835F2008C6D14 /* EditDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B62268835F2008C6D14 /* EditDrinkView.swift */; };
 		5C163B65268919E7008C6D14 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B64268919E7008C6D14 /* NavigationBarModifier.swift */; };
 		5C163B68268930BF008C6D14 /* AddDrinkOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163B67268930BF008C6D14 /* AddDrinkOrder.swift */; };
+		5C336C0326B09D2B0085E72E /* DrinkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C336C0226B09D2B0085E72E /* DrinkModels.swift */; };
+		5C336C0726B256240085E72E /* CoffeeOptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C336C0626B256240085E72E /* CoffeeOptionsModel.swift */; };
+		5C336C0926B256500085E72E /* ReturnMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C336C0826B256500085E72E /* ReturnMessageModel.swift */; };
+		5C336C0B26B256880085E72E /* CreateCoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C336C0A26B256880085E72E /* CreateCoffeeModel.swift */; };
 		5C3E7135268D385400D07AA0 /* AddMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E7134268D385400D07AA0 /* AddMembers.swift */; };
+		5C4C05AA26A8B7F2003C216B /* RegistrationProfileswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4C05A926A8B7F2003C216B /* RegistrationProfileswift.swift */; };
 		CD2074ED26940389008223D0 /* Friending.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074EC26940389008223D0 /* Friending.swift */; };
 		CD2074EF269403DB008223D0 /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074EE269403DB008223D0 /* FriendProfileView.swift */; };
 		CD2074F126940415008223D0 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074F026940415008223D0 /* profile.swift */; };
@@ -78,17 +83,22 @@
 		5C163B352686C51B008C6D14 /* GroupOrderMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupOrderMain.swift; sourceTree = "<group>"; };
 		5C163B382686C51B008C6D14 /* MyCoffeeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCoffeeTabView.swift; sourceTree = "<group>"; };
 		5C163B392686C51B008C6D14 /* listOfCoffeeSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listOfCoffeeSection.swift; sourceTree = "<group>"; };
-		5C163B3A2686C51B008C6D14 /* CreateNewDrinkBtnSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewDrinkBtnSection.swift; sourceTree = "<group>"; };
+		5C163B3A2686C51B008C6D14 /* CreateNewDrinkBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewDrinkBtn.swift; sourceTree = "<group>"; };
 		5C163B3B2686C51B008C6D14 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5C163B3C2686C51B008C6D14 /* FriendRecentDrinkHScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRecentDrinkHScroll.swift; sourceTree = "<group>"; };
 		5C163B542686C61A008C6D14 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		5C163B582686C69C008C6D14 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		5C163B5D268819CB008C6D14 /* SecureLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureLevelView.swift; sourceTree = "<group>"; };
 		5C163B60268832D2008C6D14 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
-		5C163B62268835F2008C6D14 /* ExtraDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraDetailView.swift; sourceTree = "<group>"; };
+		5C163B62268835F2008C6D14 /* EditDrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDrinkView.swift; sourceTree = "<group>"; };
 		5C163B64268919E7008C6D14 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		5C163B67268930BF008C6D14 /* AddDrinkOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDrinkOrder.swift; sourceTree = "<group>"; };
+		5C336C0226B09D2B0085E72E /* DrinkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkModels.swift; sourceTree = "<group>"; };
+		5C336C0626B256240085E72E /* CoffeeOptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeOptionsModel.swift; sourceTree = "<group>"; };
+		5C336C0826B256500085E72E /* ReturnMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnMessageModel.swift; sourceTree = "<group>"; };
+		5C336C0A26B256880085E72E /* CreateCoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCoffeeModel.swift; sourceTree = "<group>"; };
 		5C3E7134268D385400D07AA0 /* AddMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembers.swift; sourceTree = "<group>"; };
+		5C4C05A926A8B7F2003C216B /* RegistrationProfileswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationProfileswift.swift; sourceTree = "<group>"; };
 		CD2074EC26940389008223D0 /* Friending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friending.swift; sourceTree = "<group>"; };
 		CD2074EE269403DB008223D0 /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		CD2074F026940415008223D0 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
@@ -150,10 +160,9 @@
 		5C163AB02686C190008C6D14 /* AppEntry */ = {
 			isa = PBXGroup;
 			children = (
-				5C163AB12686C190008C6D14 /* Authentication.swift */,
 				5C163AA12686C0DC008C6D14 /* CoffeeBreakAppApp.swift */,
 				5C163AB32686C190008C6D14 /* Model */,
-				5C163AB52686C190008C6D14 /* Login */,
+				5C163AB52686C190008C6D14 /* Login-Signup */,
 				5C163ABA2686C190008C6D14 /* Services */,
 			);
 			path = AppEntry;
@@ -162,20 +171,22 @@
 		5C163AB32686C190008C6D14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5C163AB12686C190008C6D14 /* Authentication.swift */,
+				5C163AB62686C190008C6D14 /* LoginViewModel.swift */,
 				5C163AB42686C190008C6D14 /* Credentials.swift */,
+				5C4C05A926A8B7F2003C216B /* RegistrationProfileswift.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5C163AB52686C190008C6D14 /* Login */ = {
+		5C163AB52686C190008C6D14 /* Login-Signup */ = {
 			isa = PBXGroup;
 			children = (
-				5C163AB62686C190008C6D14 /* LoginViewModel.swift */,
 				5C163AB72686C190008C6D14 /* LoginView.swift */,
 				5C163AB92686C190008C6D14 /* SignUpView.swift */,
 				5C163B5D268819CB008C6D14 /* SecureLevelView.swift */,
 			);
-			path = Login;
+			path = "Login-Signup";
 			sourceTree = "<group>";
 		};
 		5C163ABA2686C190008C6D14 /* Services */ = {
@@ -190,11 +201,12 @@
 		5C163B1A2686C51B008C6D14 /* Coffee App */ = {
 			isa = PBXGroup;
 			children = (
+				5C163B3B2686C51B008C6D14 /* MainView.swift */,
 				5C163B362686C51B008C6D14 /* MyCoffeeTab */,
-				5C163B562686C69C008C6D14 /* DataModels */,
 				5C163B212686C51B008C6D14 /* ProfileTab */,
 				5C163B232686C51B008C6D14 /* FriendTab */,
 				5C163B262686C51B008C6D14 /* GroupOrderTab */,
+				5C163B562686C69C008C6D14 /* DataModels */,
 			);
 			path = "Coffee App";
 			sourceTree = "<group>";
@@ -272,12 +284,12 @@
 		5C163B362686C51B008C6D14 /* MyCoffeeTab */ = {
 			isa = PBXGroup;
 			children = (
-				5C163B3B2686C51B008C6D14 /* MainView.swift */,
+				5C336C0126B09CEF0085E72E /* MyCoffee Models */,
 				5C163B382686C51B008C6D14 /* MyCoffeeTabView.swift */,
-				5C163B372686C51B008C6D14 /* SubviewCoffeeTab */,
-				5C163B5F268832C0008C6D14 /* Details */,
-				5C163B3A2686C51B008C6D14 /* CreateNewDrinkBtnSection.swift */,
+				5C163B3A2686C51B008C6D14 /* CreateNewDrinkBtn.swift */,
 				5C163B392686C51B008C6D14 /* listOfCoffeeSection.swift */,
+				5C163B5F268832C0008C6D14 /* Details */,
+				5C163B372686C51B008C6D14 /* SubviewCoffeeTab */,
 			);
 			path = MyCoffeeTab;
 			sourceTree = "<group>";
@@ -303,7 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				5C163B60268832D2008C6D14 /* DetailsView.swift */,
-				5C163B62268835F2008C6D14 /* ExtraDetailView.swift */,
+				5C163B62268835F2008C6D14 /* EditDrinkView.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -314,6 +326,17 @@
 				5C163B67268930BF008C6D14 /* AddDrinkOrder.swift */,
 			);
 			path = AddDrinkView;
+			sourceTree = "<group>";
+		};
+		5C336C0126B09CEF0085E72E /* MyCoffee Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C336C0226B09D2B0085E72E /* DrinkModels.swift */,
+				5C336C0626B256240085E72E /* CoffeeOptionsModel.swift */,
+				5C336C0826B256500085E72E /* ReturnMessageModel.swift */,
+				5C336C0A26B256880085E72E /* CreateCoffeeModel.swift */,
+			);
+			path = "MyCoffee Models";
 			sourceTree = "<group>";
 		};
 		5C3E7133268D16F700D07AA0 /* OrderLayoutViews */ = {
@@ -410,12 +433,15 @@
 				CD2074F9269404CE008223D0 /* FriendContentView.swift in Sources */,
 				5C163B502686C51B008C6D14 /* listOfCoffeeSection.swift in Sources */,
 				5C163B68268930BF008C6D14 /* AddDrinkOrder.swift in Sources */,
+				5C4C05AA26A8B7F2003C216B /* RegistrationProfileswift.swift in Sources */,
 				5C163AC12686C190008C6D14 /* LoginView.swift in Sources */,
 				5C163B412686C51B008C6D14 /* MeTabView.swift in Sources */,
 				5C163AA22686C0DC008C6D14 /* CoffeeBreakAppApp.swift in Sources */,
+				5C336C0926B256500085E72E /* ReturnMessageModel.swift in Sources */,
 				CD2074F126940415008223D0 /* profile.swift in Sources */,
 				5C163AC52686C190008C6D14 /* Extension.swift in Sources */,
 				5C163B4A2686C51B008C6D14 /* MapView.swift in Sources */,
+				5C336C0726B256240085E72E /* CoffeeOptionsModel.swift in Sources */,
 				5C163B5A2686C69C008C6D14 /* Models.swift in Sources */,
 				5C163AC02686C190008C6D14 /* LoginViewModel.swift in Sources */,
 				5C163B65268919E7008C6D14 /* NavigationBarModifier.swift in Sources */,
@@ -431,14 +457,16 @@
 				5C163B482686C51B008C6D14 /* Landmark.swift in Sources */,
 				CD2074F7269404A9008223D0 /* CustomScrollViewApp.swift in Sources */,
 				5C163B61268832D2008C6D14 /* DetailsView.swift in Sources */,
+				5C336C0326B09D2B0085E72E /* DrinkModels.swift in Sources */,
 				5C163B532686C51B008C6D14 /* FriendRecentDrinkHScroll.swift in Sources */,
 				5C163B4D2686C51B008C6D14 /* InactiveOrder.swift in Sources */,
-				5C163B63268835F2008C6D14 /* ExtraDetailView.swift in Sources */,
+				5C163B63268835F2008C6D14 /* EditDrinkView.swift in Sources */,
 				5C163AC42686C190008C6D14 /* APIService.swift in Sources */,
 				5C163B492686C51B008C6D14 /* PlaceListView.swift in Sources */,
 				5C3E7135268D385400D07AA0 /* AddMembers.swift in Sources */,
 				5C163B552686C61A008C6D14 /* DataModel.swift in Sources */,
-				5C163B512686C51B008C6D14 /* CreateNewDrinkBtnSection.swift in Sources */,
+				5C336C0B26B256880085E72E /* CreateCoffeeModel.swift in Sources */,
+				5C163B512686C51B008C6D14 /* CreateNewDrinkBtn.swift in Sources */,
 				5C163B452686C51B008C6D14 /* CreateOrder.swift in Sources */,
 				5C163B4B2686C51B008C6D14 /* LocationManager.swift in Sources */,
 				CD2074EF269403DB008223D0 /* FriendProfileView.swift in Sources */,
