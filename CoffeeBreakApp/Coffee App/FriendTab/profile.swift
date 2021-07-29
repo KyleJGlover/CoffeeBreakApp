@@ -12,8 +12,9 @@ struct profile: View {
     
     @State private var isModal: Bool = false;
     let stories = ["BMC","Mocha", "Expresso","Frap","Mazagan"]
-    let stories2 = ["BMC","Mocha", "Expresso","Frap","Mazagan","ColdBrew","IcedCoffee",
+    let stories2 = ["CoffeeCupTabIcon", "Mocha", "Expresso","Frap","Mazagan","ColdBrew","IcedCoffee",
     "Macchiato"]
+    
     var body: some View {
 
             
@@ -38,11 +39,11 @@ struct profile: View {
                     .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                     .cornerRadius(25)
                 } .padding(.horizontal)
-            .offset(x:1)
+            .offset(x:25)
                 
             }.padding()
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.black)            ;
+            .background(Color.black);
             
             
             HStack(spacing: 15) {
@@ -56,17 +57,13 @@ struct profile: View {
                        .foregroundColor(Color(.white));
                     Spacer()
                                        
-                    Button(action:{
-                        print("checkmark")
-                    }){
-                        HStack{
-                            Text("Add Friend")
-                                .padding(.bottom);
-                            
-                            
-                                //.padding(.bottom)
-                            
-                        }
+                    Button("Add Friend"){
+                       // self.placeOrder()
+                    
+                    
+                    
+                    
+                     
                         
                     }.frame(alignment: .trailing)
                     .padding(.horizontal)
@@ -78,6 +75,7 @@ struct profile: View {
                     }.frame( alignment: .trailing)
                 
                 }.padding()
+                
                 
             }
            
@@ -104,11 +102,11 @@ struct profile: View {
                         ScrollView(.horizontal, showsIndicators: false){
                             HStack(spacing: 3){
                                 ForEach(stories, id: \.self){name in
-                                Image(name)
+                                Image("CoffeeCupTabIcon")
                                         .resizable()
                                         .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                                         .frame(width: 140, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        .background(Color.black)
+                                        .background(Color.gray)
                                         .clipped()
                                         Spacer()
                                     }
@@ -130,11 +128,11 @@ struct profile: View {
                                 ScrollView(.horizontal, showsIndicators: false){
                                     HStack(spacing: 3){
                                         ForEach(stories2, id: \.self){name in
-                                        Image(name)
+                                        Image("CoffeeCupTabIcon")
                                             .resizable()
                                             .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                                             .frame(width: 140, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        .background(Color.black)                                               .clipped()
+                                        .background(Color.gray)                                               .clipped()
                                                 Spacer()                     }
                                                                         
                                             }
@@ -144,17 +142,25 @@ struct profile: View {
                                   
                                 }
                 
-            }.background(Color("myCoffeeControlColor"))
+                            }.background(Color("myCoffeeControlColor"))
             
                     }.background(Color("myCoffeeControlColor"))
         //Divider().frame(height: 1).background(Color.black)
             //.offset(y:40)
             
-        }
-    }
+                }
+            }
+            
+   // func placeOrder(){
+  //  guard let encoded = try? JSONEncoder().encode(order)
+    //    else {
+    //        print ("failed")
+     //       return
     
-}
+       // }
+  // }
 
+}
 
 struct profile_Previews: PreviewProvider {
     @ObservedObject static var friendpeek = Friendpeek (id:0, Name: "stephen", AboutMe: "I like Iced Coffee", Image: "animoji3")
