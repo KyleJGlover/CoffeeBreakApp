@@ -2,9 +2,7 @@ import SwiftUI
 
 struct DetailsView: View{
     
-    @State private var isModal: Bool = false
-    
-    @ObservedObject var drink: Coffee = Coffee()
+    @ObservedObject var drink: Coffee
 
     @EnvironmentObject var userProfile:Profile
     
@@ -144,8 +142,9 @@ struct DetailsView: View{
                 .background(Color.black)
             .onAppear(perform: {
                 
-                drinkOwner.profile_id = drink.profile_id ?? 0
-                drinkOwner.grabOneProfile() 
+                drinkOwner.profile_id = drink.profile_id
+                drinkOwner.grabOneProfile()
+                
             })
     
             }
@@ -154,8 +153,8 @@ struct DetailsView: View{
 
 
 
-struct DetailsViewSection_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailsView()
-    }
-}
+//struct DetailsViewSection_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DetailsView()
+//    }
+//}

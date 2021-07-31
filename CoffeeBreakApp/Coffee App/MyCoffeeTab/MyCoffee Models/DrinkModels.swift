@@ -27,8 +27,8 @@ class Coffee: ObservableObject, Identifiable, Codable{
         
     }
     // Publishes each variable and tracks any changes then updates those changes everywhere
-    @Published var profile_id: Int?
-    @Published var drink_id: Int?
+    var profile_id: Int = 0
+    var drink_id: Int = 0
     //need to change later
     //Drink
     @Published var bean: String?

@@ -1,67 +1,6 @@
 import SwiftUI
 
-class Order: ObservableObject  {
 
-    var id: UUID = UUID()
-    @Published var isActive: Bool = false
-    @Published var owner: String = ""
-    @Published var name: String = ""
-    @Published var time:String = ""
-    @Published var date: String = ""
-    @Published var location: String = ""
-    @Published var address: String = ""
-    @Published var members: [String] = [""]
-    @Published var memberDrinksName: [String] = [""]
-    init(){
-        self.isActive = true
-        self.owner = "Owner"
-        self.name = ""
-        self.time = "Time"
-        self.date = "Date"
-        self.location = "Location"
-        self.address = ""
-        self.members = ["Members"]
-        self.memberDrinksName = [""]
-    }
-    
-    init( isActive:Bool, owner:String, name:String, time:String, date:String, location:String, address:String, members:[String], memberDrinksName:[String] ){
-        self.isActive = isActive
-        self.owner = owner
-        self.name = name
-        self.time = time
-        self.date = date
-        self.location = location
-        self.address = address
-        self.members = members
-        self.memberDrinksName = memberDrinksName
-    }
-    
-}
-
-
-class OrderList: ObservableObject{
-    @Published var orderList: [Order] = []
-    @Published var isLoading: Bool = false
-    //suppose to be add order but the onappear() function is not working
-    init(){
-        let order1 = Order( isActive: true, owner: "Kyle", name: "Color",time:"4:00PM", date: "06/05/2021", location: "Philz", address: "134 Bay St", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
-        let order2 = Order( isActive: true, owner: "Stephen", name: "JNJ",time:"4:00PM", date: "08/01/2021", location: "Philz", address: "134 Bay St", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
-        let order3 = Order( isActive: false, owner: "Blake", name: "CSC688",time:"4:00PM", date: "01/08/2021", location: "Philz", address: "134 Bay St", members: ["Kyle", "Blake", "Stephen", "Alyssa"], memberDrinksName: ["Kyle's Fav", "Blake's Fav", "Stephen's Fav", "Alyssa's Fav"])
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.orderList.append(order1)
-            self.orderList.append(order2)
-            self.orderList.append(order3)
-            
-            self.isLoading = true
-
-//        }
-        
-    }
-    func deleteOrder(index: IndexSet){
-        orderList.remove(atOffsets: index)
-    }
-}
 
 struct GroupOrderMain: View {
     
@@ -95,7 +34,9 @@ struct GroupOrderMain: View {
                                     ForEach( 0 ..< self.order.orderList.count) { num in
                                         if self.order.orderList[num].isActive{
                                             VStack{
-                                                NavigationLink ( destination: ViewOrder(order: self.order.orderList[num])){
+                                                NavigationLink (
+                                                    destination: ViewOrder(order: self.order.orderList[num]))
+                                                {
                                                     ActiveOrder(order: self.order.orderList[num])
                                                 }
                                             }.padding()
@@ -165,3 +106,4 @@ struct GroupOrderMain_Previews: PreviewProvider {
 }
 
 
+//.fontWeight(.semibold)

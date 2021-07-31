@@ -11,7 +11,7 @@
 		5C163AA62686C0DD008C6D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C163AA52686C0DD008C6D14 /* Assets.xcassets */; };
 		5C163AA92686C0DD008C6D14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C163AA82686C0DD008C6D14 /* Preview Assets.xcassets */; };
 		5C163ABD2686C190008C6D14 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163AB12686C190008C6D14 /* Authentication.swift */; };
-		5C163ABF2686C190008C6D14 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163AB42686C190008C6D14 /* Credentials.swift */; };
+		5C163ABF2686C190008C6D14 /* LoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163AB42686C190008C6D14 /* LoginCredentials.swift */; };
 		5C163AC02686C190008C6D14 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163AB62686C190008C6D14 /* LoginViewModel.swift */; };
 		5C163AC12686C190008C6D14 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163AB72686C190008C6D14 /* LoginView.swift */; };
 		5C163AC32686C190008C6D14 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C163AB92686C190008C6D14 /* SignUpView.swift */; };
@@ -45,6 +45,7 @@
 		5C336C0726B256240085E72E /* CoffeeOptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C336C0626B256240085E72E /* CoffeeOptionsModel.swift */; };
 		5C336C0926B256500085E72E /* ReturnMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C336C0826B256500085E72E /* ReturnMessageModel.swift */; };
 		5C336C0B26B256880085E72E /* CreateCoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C336C0A26B256880085E72E /* CreateCoffeeModel.swift */; };
+		5C336C0E26B28BA90085E72E /* GroupOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C336C0D26B28BA90085E72E /* GroupOrderModel.swift */; };
 		5C3E7135268D385400D07AA0 /* AddMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E7134268D385400D07AA0 /* AddMembers.swift */; };
 		5C4C05AA26A8B7F2003C216B /* RegistrationProfileswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4C05A926A8B7F2003C216B /* RegistrationProfileswift.swift */; };
 		CD2074ED26940389008223D0 /* Friending.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074EC26940389008223D0 /* Friending.swift */; };
@@ -63,7 +64,7 @@
 		5C163AA82686C0DD008C6D14 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C163AAA2686C0DD008C6D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C163AB12686C190008C6D14 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		5C163AB42686C190008C6D14 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		5C163AB42686C190008C6D14 /* LoginCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCredentials.swift; sourceTree = "<group>"; };
 		5C163AB62686C190008C6D14 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5C163AB72686C190008C6D14 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5C163AB92686C190008C6D14 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		5C336C0626B256240085E72E /* CoffeeOptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeOptionsModel.swift; sourceTree = "<group>"; };
 		5C336C0826B256500085E72E /* ReturnMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnMessageModel.swift; sourceTree = "<group>"; };
 		5C336C0A26B256880085E72E /* CreateCoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCoffeeModel.swift; sourceTree = "<group>"; };
+		5C336C0D26B28BA90085E72E /* GroupOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupOrderModel.swift; sourceTree = "<group>"; };
 		5C3E7134268D385400D07AA0 /* AddMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembers.swift; sourceTree = "<group>"; };
 		5C4C05A926A8B7F2003C216B /* RegistrationProfileswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationProfileswift.swift; sourceTree = "<group>"; };
 		CD2074EC26940389008223D0 /* Friending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friending.swift; sourceTree = "<group>"; };
@@ -173,7 +175,7 @@
 			children = (
 				5C163AB12686C190008C6D14 /* Authentication.swift */,
 				5C163AB62686C190008C6D14 /* LoginViewModel.swift */,
-				5C163AB42686C190008C6D14 /* Credentials.swift */,
+				5C163AB42686C190008C6D14 /* LoginCredentials.swift */,
 				5C4C05A926A8B7F2003C216B /* RegistrationProfileswift.swift */,
 			);
 			path = Model;
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				5C163B352686C51B008C6D14 /* GroupOrderMain.swift */,
+				5C336C0C26B28B890085E72E /* GroupOrderModels */,
 				5C163B272686C51B008C6D14 /* SubviewsGroupTab */,
 			);
 			path = GroupOrderTab;
@@ -337,6 +340,14 @@
 				5C336C0A26B256880085E72E /* CreateCoffeeModel.swift */,
 			);
 			path = "MyCoffee Models";
+			sourceTree = "<group>";
+		};
+		5C336C0C26B28B890085E72E /* GroupOrderModels */ = {
+			isa = PBXGroup;
+			children = (
+				5C336C0D26B28BA90085E72E /* GroupOrderModel.swift */,
+			);
+			path = GroupOrderModels;
 			sourceTree = "<group>";
 		};
 		5C3E7133268D16F700D07AA0 /* OrderLayoutViews */ = {
@@ -451,7 +462,7 @@
 				5C163B4C2686C51B008C6D14 /* MapUserView.swift in Sources */,
 				5C163B472686C51B008C6D14 /* LandmarkAnnotation.swift in Sources */,
 				CD2074F326940443008223D0 /* FriendRowView.swift in Sources */,
-				5C163ABF2686C190008C6D14 /* Credentials.swift in Sources */,
+				5C163ABF2686C190008C6D14 /* LoginCredentials.swift in Sources */,
 				5C163B5E268819CB008C6D14 /* SecureLevelView.swift in Sources */,
 				CD2074F526940464008223D0 /* Home.swift in Sources */,
 				5C163B482686C51B008C6D14 /* Landmark.swift in Sources */,
@@ -466,6 +477,7 @@
 				5C3E7135268D385400D07AA0 /* AddMembers.swift in Sources */,
 				5C163B552686C61A008C6D14 /* DataModel.swift in Sources */,
 				5C336C0B26B256880085E72E /* CreateCoffeeModel.swift in Sources */,
+				5C336C0E26B28BA90085E72E /* GroupOrderModel.swift in Sources */,
 				5C163B512686C51B008C6D14 /* CreateNewDrinkBtn.swift in Sources */,
 				5C163B452686C51B008C6D14 /* CreateOrder.swift in Sources */,
 				5C163B4B2686C51B008C6D14 /* LocationManager.swift in Sources */,

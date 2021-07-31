@@ -1,10 +1,3 @@
-//
-//  CoffeeOptionsModel.swift
-//  CoffeeBreakApp
-//
-//  Created by Kyle Glover on 7/28/21.
-//
-
 import Foundation
 
 class CoffeeOptions: ObservableObject{

@@ -12,8 +12,6 @@ struct MyCoffeeTabView: View {
                     Color("myCoffeeControlColor")
                     .edgesIgnoringSafeArea(.all)
                     VStack {
-                        //FriendRecentDrinkHScroll()
-                        
                         CreateNewDrinkBtn().environmentObject(userProfile)
                             
                             .padding()
@@ -36,7 +34,7 @@ struct MyCoffeeTabView: View {
 
 
 struct MyCoffeeTabView_Previews: PreviewProvider {
-    @State static var drinks = listDrinks()
+    @ObservedObject static var drinks = listDrinks()
 
     static var previews: some View {
         MyCoffeeTabView().environmentObject(drinks)

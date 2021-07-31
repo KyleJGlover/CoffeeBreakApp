@@ -1,10 +1,3 @@
-//
-//  CreateCoffeeModel.swift
-//  CoffeeBreakApp
-//
-//  Created by Kyle Glover on 7/28/21.
-//
-
 import Foundation
 
 struct CreateCoffee: Codable {

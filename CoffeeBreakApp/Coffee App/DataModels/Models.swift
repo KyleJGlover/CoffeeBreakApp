@@ -1,10 +1,6 @@
 import Foundation
 import SwiftUI
 
-
-
-
-
 class FriendInfo: Identifiable {
     let id = UUID()
     var name: String

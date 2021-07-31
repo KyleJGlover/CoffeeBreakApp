@@ -28,45 +28,45 @@ struct CreateOrder: View {
 //                Spacer()
 //            }
         
-            Form{
-                TextField("Group Name", text:$newOrder.name)
-                    .padding(.top)
-                    .padding(.bottom)
-                NavigationLink(destination: MapUserView(newOrder: self.newOrder)){
-                    VStack{
-                        Text(newOrder.location)
-                        Text(newOrder.address)
-                    }
-                }.padding(.top)
-                DatePicker("Date/Time", selection:$date, in:closedRange)
-                    .datePickerStyle(WheelDatePickerStyle())
-                    .clipped()
-                
-                NavigationLink(destination: AddMembers()){
-                    ForEach(0 ..< newOrder.members.count) { num in
-                        VStack{
-                            Text(newOrder.members[num])
-                        }
-                    }
-                }.padding(.top)
-                .padding(.bottom)
-                
-                Section {
-                    HStack{
-                    Spacer()
-                        Button(action: {
-                            createOrder(newOrder: newOrder, date: date)
-                        }) {
-                            Text("Create Order")
-                                .accentColor(Color.blue)
-                            
-                        }
-                    Spacer()
-
-                    }
-                    
-                }
-            }
+//            Form{
+//                TextField("Group Name", text:$newOrder.name)
+//                    .padding(.top)
+//                    .padding(.bottom)
+//                NavigationLink(destination: MapUserView(newOrder: self.newOrder)){
+//                    VStack{
+//                        Text(newOrder.location)
+//                        Text(newOrder.address)
+//                    }
+//                }.padding(.top)
+//                DatePicker("Date/Time", selection:$date, in:closedRange)
+//                    .datePickerStyle(WheelDatePickerStyle())
+//                    .clipped()
+//                
+//                NavigationLink(destination: AddMembers()){
+//                    ForEach(0 ..< newOrder.members.count) { num in
+//                        VStack{
+//                            Text(newOrder.members[num])
+//                        }
+//                    }
+//                }.padding(.top)
+//                .padding(.bottom)
+//                
+//                Section {
+//                    HStack{
+//                    Spacer()
+//                        Button(action: {
+//                            createOrder(newOrder: newOrder, date: date)
+//                        }) {
+//                            Text("Create Order")
+//                                .accentColor(Color.blue)
+//                            
+//                        }
+//                    Spacer()
+//
+//                    }
+//                    
+//                }
+//            }
         }
         .navigationBarTitle("Order Details")
     }
