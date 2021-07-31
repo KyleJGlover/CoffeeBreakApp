@@ -17,11 +17,11 @@ struct profile: View {
     
     var body: some View {
 
+    VStack{
+        ZStack{
+            Color("myCoffeeBlack")
+                .ignoresSafeArea()
             
-    ZStack{
-        Color("myCoffeeBlack")
-            .ignoresSafeArea()
-        
         VStack{
             
             HStack(spacing: 76){
@@ -60,7 +60,7 @@ struct profile: View {
                     Button("Add Friend"){
                        // self.placeOrder()
                     
-                    
+                    AddFriend
                     
                     
                      
@@ -68,13 +68,21 @@ struct profile: View {
                     }.frame(alignment: .trailing)
                     .padding(.horizontal)
                     
-                    
+                     .background(Color.green)
+                     .foregroundColor(.black)
+                     .border(Color.black)
                         
                     Button("Remove"){
+                        removeFriend
                         
                     }.frame( alignment: .trailing)
-                
-                }.padding()
+                    .background(Color.red)
+                    .foregroundColor(.black)
+                    .padding(9)
+                    
+                    .border(Color.red)
+                    
+                }.padding(1)
                 
                 
             }
@@ -158,7 +166,7 @@ struct profile: View {
      //       return
     
        // }
-  // }
+   }
 
 }
 

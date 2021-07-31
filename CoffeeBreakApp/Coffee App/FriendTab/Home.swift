@@ -33,7 +33,7 @@ struct Home: View {
     var body: some View {
         
         ZStack(alignment: .top){
-            Color(.black)
+            Color(.white)
             .edgesIgnoringSafeArea(.all)
             VStack{
                 // moving the search bar to the top if user starts typing
@@ -43,7 +43,7 @@ struct Home: View {
                     if searchQuery == ""{
                         
                         
-                        HStack{
+                    HStack{
 //
 //                            (
 //
