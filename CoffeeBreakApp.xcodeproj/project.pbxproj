@@ -48,8 +48,6 @@
 		5C336C0E26B28BA90085E72E /* GroupOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C336C0D26B28BA90085E72E /* GroupOrderModel.swift */; };
 		5C3E7135268D385400D07AA0 /* AddMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E7134268D385400D07AA0 /* AddMembers.swift */; };
 		5C4C05AA26A8B7F2003C216B /* RegistrationProfileswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4C05A926A8B7F2003C216B /* RegistrationProfileswift.swift */; };
-		CD1B1C0426B5283200597631 /* Friendship.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1B1C0326B5283200597631 /* Friendship.swift */; };
-		CD1B1C0626B52BBE00597631 /* FriendOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1B1C0526B52BBE00597631 /* FriendOptionModel.swift */; };
 		CD2074ED26940389008223D0 /* Friending.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074EC26940389008223D0 /* Friending.swift */; };
 		CD2074EF269403DB008223D0 /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074EE269403DB008223D0 /* FriendProfileView.swift */; };
 		CD2074F126940415008223D0 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2074F026940415008223D0 /* profile.swift */; };
@@ -103,8 +101,6 @@
 		5C336C0D26B28BA90085E72E /* GroupOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupOrderModel.swift; sourceTree = "<group>"; };
 		5C3E7134268D385400D07AA0 /* AddMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembers.swift; sourceTree = "<group>"; };
 		5C4C05A926A8B7F2003C216B /* RegistrationProfileswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationProfileswift.swift; sourceTree = "<group>"; };
-		CD1B1C0326B5283200597631 /* Friendship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friendship.swift; sourceTree = "<group>"; };
-		CD1B1C0526B52BBE00597631 /* FriendOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendOptionModel.swift; sourceTree = "<group>"; };
 		CD2074EC26940389008223D0 /* Friending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friending.swift; sourceTree = "<group>"; };
 		CD2074EE269403DB008223D0 /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		CD2074F026940415008223D0 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
@@ -234,7 +230,6 @@
 				CD2074F6269404A9008223D0 /* CustomScrollViewApp.swift */,
 				CD2074F8269404CE008223D0 /* FriendContentView.swift */,
 				CD2074EE269403DB008223D0 /* FriendProfileView.swift */,
-				CD1B1C0A26B52C1700597631 /* FriendModelGroup */,
 				CD2074EB269402FA008223D0 /* FriendsTabModel */,
 			);
 			path = FriendTab;
@@ -367,15 +362,6 @@
 			path = OrderLayoutViews;
 			sourceTree = "<group>";
 		};
-		CD1B1C0A26B52C1700597631 /* FriendModelGroup */ = {
-			isa = PBXGroup;
-			children = (
-				CD1B1C0326B5283200597631 /* Friendship.swift */,
-				CD1B1C0526B52BBE00597631 /* FriendOptionModel.swift */,
-			);
-			path = FriendModelGroup;
-			sourceTree = "<group>";
-		};
 		CD2074EB269402FA008223D0 /* FriendsTabModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,13 +469,11 @@
 				CD2074F7269404A9008223D0 /* CustomScrollViewApp.swift in Sources */,
 				5C163B61268832D2008C6D14 /* DetailsView.swift in Sources */,
 				5C336C0326B09D2B0085E72E /* DrinkModels.swift in Sources */,
-				CD1B1C0426B5283200597631 /* Friendship.swift in Sources */,
 				5C163B532686C51B008C6D14 /* FriendRecentDrinkHScroll.swift in Sources */,
 				5C163B4D2686C51B008C6D14 /* InactiveOrder.swift in Sources */,
 				5C163B63268835F2008C6D14 /* EditDrinkView.swift in Sources */,
 				5C163AC42686C190008C6D14 /* APIService.swift in Sources */,
 				5C163B492686C51B008C6D14 /* PlaceListView.swift in Sources */,
-				CD1B1C0626B52BBE00597631 /* FriendOptionModel.swift in Sources */,
 				5C3E7135268D385400D07AA0 /* AddMembers.swift in Sources */,
 				5C163B552686C61A008C6D14 /* DataModel.swift in Sources */,
 				5C336C0B26B256880085E72E /* CreateCoffeeModel.swift in Sources */,

@@ -7,8 +7,49 @@
 
 import SwiftUI
 
+class Add: ObservableObject {
+    @Published var text: String = "Add Friend"
+    
+    func getData(){
+      downloadData{ [weak self] (returnedData) in
+           
+        self?.text = returnedData
+            
+        }
+    }
+    
+    func downloadData(completionHandler: @escaping (_ data: String) -> Void)  {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        completionHandler("Friend Added")
+            
+        }
+    }
+}
+
+class Remove: ObservableObject {
+    @Published var text: String = "Remove"
+    
+    func getData(){
+      downloadData{ [weak self] (returnedData) in
+           
+        self?.text = returnedData
+            
+        }
+    }
+    
+    func downloadData(completionHandler: @escaping (_ data: String) -> Void)  {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        completionHandler("Friend Removed")
+            
+        }
+    }
+}
 struct profile: View {
     @ObservedObject var friendpeek: Friendpeek
+    
+    @StateObject var addFriends = Add()
+    
+    @StateObject var removeFriends = Remove()
     
     @State private var isModal: Bool = false;
     let stories = ["BMC","Mocha", "Expresso","Frap","Mazagan"]
@@ -57,31 +98,46 @@ struct profile: View {
                        .foregroundColor(Color(.white));
                     Spacer()
                                        
-                    Button("Add Friend"){
-                       // self.placeOrder()
-                    
-                    AddFriend
-                    
-                    
-                     
+                    //add
+                    Text(addFriends.text)
+                        .fontWeight(.none)
+                        .font(.body)
+                        .padding(9)
+                        .background(Color.green)
+                        .cornerRadius(5)
+                        .foregroundColor(.white)
+                        //.padding(1)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 4)
+                                .stroke(Color.green, lineWidth: 5)
+                        )
+                     .border(Color.green)
+                        .onTapGesture {
+                            addFriends.getData()
+                        }
                         
-                    }.frame(alignment: .trailing)
-                    .padding(.horizontal)
                     
-                     .background(Color.green)
-                     .foregroundColor(.black)
-                     .border(Color.black)
-                        
-                    Button("Remove"){
-                        removeFriend
-                        
-                    }.frame( alignment: .trailing)
-                    .background(Color.red)
-                    .foregroundColor(.black)
-                    .padding(9)
                     
+                   //remove
+                    Text(removeFriends.text)
+                        
+                        
+                        
+                        .fontWeight(.none)
+                        .font(.body)
+                        .padding(9)
+                        .background(Color.red)
+                        .cornerRadius(1)
+                        .foregroundColor(.white)
+                        //.padding(1)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 4)
+                                .stroke(Color.red, lineWidth: 5)
+                        )
                     .border(Color.red)
-                    
+                        .onTapGesture {
+                            removeFriends.getData()
+                        }
                 }.padding(1)
                 
                 

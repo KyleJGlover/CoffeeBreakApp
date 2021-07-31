@@ -7,9 +7,7 @@
 
 import Foundation
 
-struct MakeFriend: Hashable,  Codable{
-        
-    
+struct BecomeFriends: Hashable,  Codable{
     var profile_id: Int
     var friend_id: Int
     var username: String
@@ -27,19 +25,37 @@ struct MakeFriend: Hashable,  Codable{
         case lastName = "last_name"
         case description
      
-   
+    }
           
-      }
-      init(){
+}
+    class FriendOptions: ObservableObject{
+        
+     
+        @Published var add:Bool = false
+        @Published var remove: Bool = false
+       
+
+        
+        func clearFriendOptions(){
+     
+            self.add = false
+            self.remove = false
+       
+        }
+
+    }
+    
+
+  //    init(){
           // Add & Remove
         
-        self.profile_id = 0
-        self.friend_id = 1
-        self.username = ""
-        self.firstName = ""
-        self.lastName = ""
-        self.description = ""
-      }
+//        self.profile_id = 0
+//        self.friend_id = 1
+ //       self.username = ""
+ //       self.firstName = ""
+ //       self.lastName = ""
+ //       self.description = ""
+  //    }
       func addFriend(returnMessage: Message, options: FriendOptions){
               let profile_id = 1
               let friend_id = 2
@@ -106,7 +122,7 @@ struct MakeFriend: Hashable,  Codable{
           }
 
       }
-  }
+  
 
 
 
