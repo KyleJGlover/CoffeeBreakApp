@@ -10,7 +10,7 @@
 
 # Constraints
 - iOS Application (iPhone Exclusive)
-- Swift UI applications works only on iOS 13.0
+- Swift UI applications works only on iOS 13.0+
 
 # Database Components
 - Object Relational Mapper: SQLAlchemy
