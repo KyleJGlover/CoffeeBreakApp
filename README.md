@@ -17,7 +17,7 @@
 -- Generates database as Objects in Python classes.
 -- Creates relationships to models and SQL Queries.
 
--Marshmallow Flask  database-agnostic framework library for creating REST APIs.
+- Marshmallow Flask  database-agnostic framework library for creating REST APIs.
 -- Serializes and deserializes data.
 
 # Project Tasks
